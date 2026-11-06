@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 // External shell CSR block (roadmap Section 11 register worksheet).
 //
 // Implements the AXI4-Lite slave with the documented register map, the
@@ -5,12 +6,16 @@
 // eight 64-bit counter snapshot pairs.  Generated constants come from
 // rtl/shell/csr_offsets.svh (generated from ip/schema/csr_map.json).
 //
-// Rules implemented here (Section 11):
+// Rules implemented here, from the schema's rules list:
+//   - WSTRB is honored: only strobed bytes are committed to writable state;
+//     COMMAND executes only when all four strobes are present;
+//   - writes to read-only state are ignored;
 //   - decoupled write-address / write-data capture, either may arrive first;
 //   - BVALID/RVALID held until handshake;
+//   - the sticky error retains the FIRST fault until acknowledged via
+//     CLEAR_FAULT;
 //   - a sticky-error clear in the same cycle as a new fault preserves the
-//     new event;
-//   - writes to read-only state are ignored.
+//     new event.
 
 `include "mgr1_defs.svh"
 `include "csr_offsets.svh"
@@ -70,16 +75,32 @@ module csr_block #(
 
   logic        cmd_fire;
   logic [31:0] cmd_word;
+  // Combinational: a clear-fault command commits on this edge.
+  logic        clear_cmd_fire;
 
-  // Initial identity values (overridden by parameters in the integration).
+  // Initial identity values; firmware may revise at integration time.
   initial begin
     id_q     = 32'h0001_4D47;
     caps_q   = 32'h0000_000F;
     limits_q = 32'd0;
   end
 
+  // Per-byte write commit for a 32-bit register: only strobed bytes change.
+  function automatic logic [31:0] apply_strb(
+    input logic [31:0] old, input logic [31:0] wr, input logic [3:0] strb);
+    logic [31:0] merged;
+    merged = old;
+    if (strb[0]) merged[7:0]   = wr[7:0];
+    if (strb[1]) merged[15:8]  = wr[15:8];
+    if (strb[2]) merged[23:16] = wr[23:16];
+    if (strb[3]) merged[31:24] = wr[31:24];
+    return merged;
+  endfunction
+
   assign cmd_fire = aw_pending && w_pending;
   assign cmd_word = w_data_q;
+  assign clear_cmd_fire = cmd_fire && aw_addr_q == OFF_COMMAND &&
+                          w_strb_q == 4'b1111 && cmd_word[2:0] == CMD_CLEAR_FAULT;
 
   // Write handling: capture address and data independently, commit on both.
   always_ff @(posedge aclk or negedge aresetn) begin
@@ -105,7 +126,7 @@ module csr_block #(
         w_strb_q  <= w_strb;
       end
 
-      if (cmd_fire) begin
+      if (cmd_fire && (aw_addr_q == OFF_COMMAND ? (w_strb_q == 4'b1111) : 1'b1)) begin
         aw_pending <= 1'b0;
         w_pending  <= 1'b0;
         b_valid    <= 1'b1;
@@ -127,33 +148,45 @@ module csr_block #(
                            end
               CMD_CLEAR_FAULT: begin
                              // A sticky-error clear in the same cycle as a
-                             // new fault preserves the new event.
+                             // new fault preserves the new event (the
+                             // sticky capture below re-arms on this edge).
                              if (!(error_valid_i && error_cause_i != '0))
                                error_q <= '0;
                            end
               default: ;
             endcase
           end
-          OFF_DESC_LO:  desc_lo_q  <= w_data_q;
-          OFF_DESC_HI:  desc_hi_q  <= w_data_q;
-          OFF_DESC_LEN: desc_len_q <= w_data_q;
-          OFF_ARG:      arg_q      <= w_data_q;
-          OFF_IRQ_MASK: irq_mask_q <= w_data_q;
+          OFF_DESC_LO:  desc_lo_q  <= apply_strb(desc_lo_q,  w_data_q, w_strb_q);
+          OFF_DESC_HI:  desc_hi_q  <= apply_strb(desc_hi_q,  w_data_q, w_strb_q);
+          OFF_DESC_LEN: desc_len_q <= apply_strb(desc_len_q, w_data_q, w_strb_q);
+          OFF_ARG:      arg_q      <= apply_strb(arg_q,      w_data_q, w_strb_q);
+          OFF_IRQ_MASK: irq_mask_q <= apply_strb(irq_mask_q, w_data_q, w_strb_q);
           OFF_IRQ_STATUS: begin
-            // W1C: clear only the written-one, unconsumed sources.
-            irq_status_q <= irq_status_q & ~w_data_q;
+            // W1C: clear only the written-one bits of strobed bytes.
+            for (int b = 0; b < 4; b++) begin
+              if (w_strb_q[b])
+                irq_status_q[b*8 +: 8] <= irq_status_q[b*8 +: 8] & ~w_data_q[b*8 +: 8];
+            end
           end
           default: ;  // writes to read-only state are ignored
         endcase
+      end else if (cmd_fire) begin
+        // A partial-strobe COMMAND write consumes the handshake without
+        // executing the command (schema rule: honor WSTRB).
+        aw_pending <= 1'b0;
+        w_pending  <= 1'b0;
+        b_valid    <= 1'b1;
+        b_resp     <= 2'b00;
       end else if (b_valid && b_ready) begin
         b_valid <= 1'b0;
       end
 
-      // Sticky error capture.
-      if (error_valid_i && error_cause_i != '0) begin
+      // Sticky error capture: retains the FIRST cause until acknowledged,
+      // but a clear in the same cycle as a new fault keeps the new cause.
+      if (error_valid_i && error_cause_i != '0 &&
+          (error_q == '0 || clear_cmd_fire))
         error_q <= error_cause_i;
-        state_q <= ST_FAULT;
-      end
+      if (error_valid_i && error_cause_i != '0) state_q <= ST_FAULT;
 
       // Model/epoch visibility follows the datapath after commit.
       if (state_q == ST_READY) begin

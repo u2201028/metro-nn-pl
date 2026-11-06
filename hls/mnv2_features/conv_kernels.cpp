@@ -7,6 +7,14 @@
 // the full reduction.  Requantization follows the frozen record in
 // model/integer_oracle/oracle.py.  Both kernels produce channel-major
 // (CHW) output tensors.
+//
+// Synthesis notes (interface / pragma directives, Phase 6/8A): the
+// PIPELINE directives fix II=1 on the innermost reduction loops and
+// change QoR only - loop order and arithmetic are untouched, verified
+// bit-exactly by tb_conv against the sentinel vectors.  Block-level
+// control and port binding stay at the build.tcl flow's defaults
+// (ap_ctrl_hs block control, ap_memory arrays) because the exported IP
+// is instantiated by the Vivado shell (docs/07-vivado-runbook.md).
 
 #include "mgr1_types.h"
 
@@ -28,6 +36,7 @@ void conv2d_int8(const int8_t* x, const int8_t* w, const int32_t* b,
                 for (int ic = 0; ic < cin; ++ic) {
                     for (int ky = 0; ky < kh; ++ky) {
                         for (int kx = 0; kx < kw; ++kx) {
+                            #pragma HLS PIPELINE II = 1
                             const int iy = oy * stride + ky - pad;
                             const int ix = ox * stride + kx - pad;
                             if (iy >= 0 && iy < hin && ix >= 0 && ix < win) {
@@ -59,6 +68,7 @@ void depthwise_conv2d_int8(const int8_t* x, const int8_t* w, const int32_t* b,
                 int64_t acc = b[c];
                 for (int ky = 0; ky < kh; ++ky) {
                     for (int kx = 0; kx < kw; ++kx) {
+                            #pragma HLS PIPELINE II = 1
                         const int iy = oy * stride + ky - pad;
                         const int ix = ox * stride + kx - pad;
                         if (iy >= 0 && iy < hin && ix >= 0 && ix < win) {

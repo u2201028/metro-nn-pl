@@ -15,7 +15,9 @@ set clkperiod 6.67
 open_project -reset $prj
 set_top $top
 add_files ../common/activation_luts.cpp
-add_files ./gru_top.cpp -cflags "-I../common"
+# C++17 pinned because in-source PIPELINE pragmas (see gru_top.cpp)
+# carry the interface/QoR contract; cflags keep csim == csynth == the sandbox g++ build.
+add_files ./gru_top.cpp -cflags "-std=c++17 -I../common"
 add_files -tb ./tb_gru.cpp -cflags "-I../common"
 add_files -tb ../../vectors/golden/gru_window.vec
 

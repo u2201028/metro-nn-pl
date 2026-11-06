@@ -39,6 +39,11 @@ constexpr int Q15_MIN = -32768;
 constexpr int GATE_FRAC = 10;
 constexpr int HIDDEN_SHIFT = 8;
 
+// Instance capacity constant for the synthesizable kernels (Phase 6).
+// The deployed profile is H = 128; loop bodies gate on the runtime h_size
+// argument so any h_size <= MGR1_MAX_H reproduces the oracle bit-exactly.
+constexpr int MGR1_MAX_H = 128;
+
 // Exact round-half-to-even of num/den, den > 0.
 inline int64_t round_half_even(int64_t num, int64_t den) {
     int64_t q = num / den;

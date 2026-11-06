@@ -9,7 +9,9 @@ set clkperiod 6.67
 
 open_project -reset $prj
 set_top $top
-add_files ./conv_kernels.cpp -cflags "-I../common"
+# C++17 pinned because in-source PIPELINE pragmas (see conv_kernels.cpp)
+# carry the interface/QoR contract; cflags keep csim == csynth == the sandbox g++ build.
+add_files ./conv_kernels.cpp -cflags "-std=c++17 -I../common"
 add_files -tb ./tb_conv.cpp -cflags "-I../common"
 add_files -tb ../../vectors/golden/conv_sentinels.vec
 

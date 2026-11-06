@@ -1,0 +1,55 @@
+F:\metro-nn-pl\hls\mnv2_features\mgr1_conv_prj\sol1\.autopilot\db\conv_kernels.pp.0.cpp:2001:5: warning: Added loop label VITIS_LOOP_32_1:   [xilinx-label-all-loops]
+    for (int oc = 0; oc < cout; ++oc) {
+    ^~~
+    VITIS_LOOP_32_1: 
+F:\metro-nn-pl\hls\mnv2_features\mgr1_conv_prj\sol1\.autopilot\db\conv_kernels.pp.0.cpp:2001:5: note: FIX-IT applied suggested code changes
+F:\metro-nn-pl\hls\mnv2_features\mgr1_conv_prj\sol1\.autopilot\db\conv_kernels.pp.0.cpp:2002:9: warning: Added loop label VITIS_LOOP_33_2:   [xilinx-label-all-loops]
+        for (int oy = 0; oy < hout; ++oy) {
+        ^~~
+        VITIS_LOOP_33_2: 
+F:\metro-nn-pl\hls\mnv2_features\mgr1_conv_prj\sol1\.autopilot\db\conv_kernels.pp.0.cpp:2002:9: note: FIX-IT applied suggested code changes
+F:\metro-nn-pl\hls\mnv2_features\mgr1_conv_prj\sol1\.autopilot\db\conv_kernels.pp.0.cpp:2003:13: warning: Added loop label VITIS_LOOP_34_3:   [xilinx-label-all-loops]
+            for (int ox = 0; ox < wout; ++ox) {
+            ^~~
+            VITIS_LOOP_34_3: 
+F:\metro-nn-pl\hls\mnv2_features\mgr1_conv_prj\sol1\.autopilot\db\conv_kernels.pp.0.cpp:2003:13: note: FIX-IT applied suggested code changes
+F:\metro-nn-pl\hls\mnv2_features\mgr1_conv_prj\sol1\.autopilot\db\conv_kernels.pp.0.cpp:2005:17: warning: Added loop label VITIS_LOOP_36_4:   [xilinx-label-all-loops]
+                for (int ic = 0; ic < cin; ++ic) {
+                ^~~
+                VITIS_LOOP_36_4: 
+F:\metro-nn-pl\hls\mnv2_features\mgr1_conv_prj\sol1\.autopilot\db\conv_kernels.pp.0.cpp:2005:17: note: FIX-IT applied suggested code changes
+F:\metro-nn-pl\hls\mnv2_features\mgr1_conv_prj\sol1\.autopilot\db\conv_kernels.pp.0.cpp:2006:21: warning: Added loop label VITIS_LOOP_37_5:   [xilinx-label-all-loops]
+                    for (int ky = 0; ky < kh; ++ky) {
+                    ^~~
+                    VITIS_LOOP_37_5: 
+F:\metro-nn-pl\hls\mnv2_features\mgr1_conv_prj\sol1\.autopilot\db\conv_kernels.pp.0.cpp:2006:21: note: FIX-IT applied suggested code changes
+F:\metro-nn-pl\hls\mnv2_features\mgr1_conv_prj\sol1\.autopilot\db\conv_kernels.pp.0.cpp:2007:25: warning: Added loop label VITIS_LOOP_38_6:   [xilinx-label-all-loops]
+                        for (int kx = 0; kx < kw; ++kx) {
+                        ^~~
+                        VITIS_LOOP_38_6: 
+F:\metro-nn-pl\hls\mnv2_features\mgr1_conv_prj\sol1\.autopilot\db\conv_kernels.pp.0.cpp:2007:25: note: FIX-IT applied suggested code changes
+F:\metro-nn-pl\hls\mnv2_features\mgr1_conv_prj\sol1\.autopilot\db\conv_kernels.pp.0.cpp:2034:5: warning: Added loop label VITIS_LOOP_65_1:   [xilinx-label-all-loops]
+    for (int c = 0; c < cin; ++c) {
+    ^~~
+    VITIS_LOOP_65_1: 
+F:\metro-nn-pl\hls\mnv2_features\mgr1_conv_prj\sol1\.autopilot\db\conv_kernels.pp.0.cpp:2034:5: note: FIX-IT applied suggested code changes
+F:\metro-nn-pl\hls\mnv2_features\mgr1_conv_prj\sol1\.autopilot\db\conv_kernels.pp.0.cpp:2035:9: warning: Added loop label VITIS_LOOP_66_2:   [xilinx-label-all-loops]
+        for (int oy = 0; oy < hout; ++oy) {
+        ^~~
+        VITIS_LOOP_66_2: 
+F:\metro-nn-pl\hls\mnv2_features\mgr1_conv_prj\sol1\.autopilot\db\conv_kernels.pp.0.cpp:2035:9: note: FIX-IT applied suggested code changes
+F:\metro-nn-pl\hls\mnv2_features\mgr1_conv_prj\sol1\.autopilot\db\conv_kernels.pp.0.cpp:2036:13: warning: Added loop label VITIS_LOOP_67_3:   [xilinx-label-all-loops]
+            for (int ox = 0; ox < wout; ++ox) {
+            ^~~
+            VITIS_LOOP_67_3: 
+F:\metro-nn-pl\hls\mnv2_features\mgr1_conv_prj\sol1\.autopilot\db\conv_kernels.pp.0.cpp:2036:13: note: FIX-IT applied suggested code changes
+F:\metro-nn-pl\hls\mnv2_features\mgr1_conv_prj\sol1\.autopilot\db\conv_kernels.pp.0.cpp:2038:17: warning: Added loop label VITIS_LOOP_69_4:   [xilinx-label-all-loops]
+                for (int ky = 0; ky < kh; ++ky) {
+                ^~~
+                VITIS_LOOP_69_4: 
+F:\metro-nn-pl\hls\mnv2_features\mgr1_conv_prj\sol1\.autopilot\db\conv_kernels.pp.0.cpp:2038:17: note: FIX-IT applied suggested code changes
+F:\metro-nn-pl\hls\mnv2_features\mgr1_conv_prj\sol1\.autopilot\db\conv_kernels.pp.0.cpp:2039:21: warning: Added loop label VITIS_LOOP_70_5:   [xilinx-label-all-loops]
+                    for (int kx = 0; kx < kw; ++kx) {
+                    ^~~
+                    VITIS_LOOP_70_5: 
+F:\metro-nn-pl\hls\mnv2_features\mgr1_conv_prj\sol1\.autopilot\db\conv_kernels.pp.0.cpp:2039:21: note: FIX-IT applied suggested code changes

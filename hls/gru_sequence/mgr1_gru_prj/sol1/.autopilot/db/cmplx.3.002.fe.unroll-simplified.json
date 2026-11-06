@@ -1,0 +1,70 @@
+{
+  "0": {
+    "basicblocks": 16,
+    "calls": "2 2 4 3 1 1 1 5",
+    "file": "gru_top.cpp",
+    "fileloc": 30,
+    "instructions": 133,
+    "loads": {
+      "L": 6,
+      "T": 7
+    },
+    "name": "gru_step",
+    "stores": {
+      "L": 4,
+      "T": 1
+    },
+    "total_instructions": 331
+  },
+  "1": {
+    "basicblocks": 5,
+    "calls": "",
+    "file": "mgr1_types.h",
+    "fileloc": 48,
+    "instructions": 22,
+    "name": "round_half_even",
+    "total_instructions": 22
+  },
+  "2": {
+    "basicblocks": 3,
+    "calls": "1 5",
+    "file": "mgr1_types.h",
+    "fileloc": 66,
+    "instructions": 11,
+    "name": "requantize",
+    "total_instructions": 43
+  },
+  "3": {
+    "basicblocks": 1,
+    "calls": "5",
+    "file": "activation_luts.cpp",
+    "fileloc": 23,
+    "instructions": 8,
+    "loads": {
+      "G": 1
+    },
+    "name": "tanh_q15",
+    "total_instructions": 18
+  },
+  "4": {
+    "basicblocks": 1,
+    "calls": "5",
+    "file": "activation_luts.cpp",
+    "fileloc": 19,
+    "instructions": 8,
+    "loads": {
+      "G": 1
+    },
+    "name": "sigmoid_q15",
+    "total_instructions": 18
+  },
+  "5": {
+    "basicblocks": 3,
+    "calls": "",
+    "file": "mgr1_types.h",
+    "fileloc": 57,
+    "instructions": 10,
+    "name": "sat",
+    "total_instructions": 10
+  }
+}

@@ -1,0 +1,6 @@
+<pragmas>
+<pragma file="gru_top.cpp" line="77" pragmaType="pipeline" parentfunction="gru_step" off="0" ii="1" rewind="0" style=""/>
+<pragma file="gru_top.cpp" line="62" pragmaType="pipeline" parentfunction="gru_step" off="0" ii="1" rewind="0" style=""/>
+<pragma file="gru_top.cpp" line="55" pragmaType="pipeline" parentfunction="gru_step" off="0" ii="1" rewind="0" style=""/>
+<pragma file="gru_top.cpp" line="46" pragmaType="pipeline" parentfunction="gru_step" off="0" ii="1" rewind="0" style=""/>
+</pragmas>

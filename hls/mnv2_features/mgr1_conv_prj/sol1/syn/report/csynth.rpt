@@ -1,0 +1,216 @@
+
+
+================================================================
+== Synthesis Summary Report of 'conv2d_int8'
+================================================================
++ General Information: 
+    * Date:           Fri Nov  6 16:38:26 2026
+    * Version:        2024.2 (Build 5238294 on Nov  8 2024)
+    * Project:        mgr1_conv_prj
+    * Solution:       sol1 (Vivado IP Flow Target)
+    * Product family: zynquplus
+    * Target device:  xck26-sfvc784-2LV-c
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +----------------------------------------------------------------------------+------+------+---------+--------+----------+---------+------+----------+------+---------+-----------+-----------+-----+
+    |                                   Modules                                  | Issue|      | Latency | Latency| Iteration|         | Trip |          |      |         |           |           |     |
+    |                                   & Loops                                  | Type | Slack| (cycles)|  (ns)  |  Latency | Interval| Count| Pipelined| BRAM |   DSP   |     FF    |    LUT    | URAM|
+    +----------------------------------------------------------------------------+------+------+---------+--------+----------+---------+------+----------+------+---------+-----------+-----------+-----+
+    |+ conv2d_int8                                                               |     -|  0.00|        -|       -|         -|        -|     -|        no|     -|  21 (1%)|  4099 (1%)|  5399 (4%)|    -|
+    | o VITIS_LOOP_32_1                                                          |     -|  4.87|        -|       -|         -|        -|     -|        no|     -|        -|          -|          -|    -|
+    |  o VITIS_LOOP_33_2                                                         |     -|  4.87|        -|       -|         -|        -|     -|        no|     -|        -|          -|          -|    -|
+    |   o VITIS_LOOP_34_3                                                        |     -|  4.87|        -|       -|         -|        -|     -|        no|     -|        -|          -|          -|    -|
+    |    + conv2d_int8_Pipeline_VITIS_LOOP_36_4_VITIS_LOOP_37_5_VITIS_LOOP_38_6  |     -|  0.00|        -|       -|         -|        -|     -|        no|     -|  2 (~0%)|  719 (~0%)|  1263 (1%)|    -|
+    |     o VITIS_LOOP_36_4_VITIS_LOOP_37_5_VITIS_LOOP_38_6                      |     -|  4.87|        -|       -|         2|        1|     -|       yes|     -|        -|          -|          -|    -|
+    +----------------------------------------------------------------------------+------+------+---------+--------+----------+---------+------+----------+------+---------+-----------+-----------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* Other Ports
++--------+---------+-----------+----------+
+| Port   | Mode    | Direction | Bitwidth |
++--------+---------+-----------+----------+
+| b      | ap_none | in        | 32       |
+| cin    | ap_none | in        | 32       |
+| cout   | ap_none | in        | 32       |
+| hin    | ap_none | in        | 32       |
+| kh     | ap_none | in        | 32       |
+| kw     | ap_none | in        | 32       |
+| mult   | ap_none | in        | 32       |
+| out_r  | ap_vld  | out       | 8        |
+| pad    | ap_none | in        | 32       |
+| shift  | ap_none | in        | 32       |
+| stride | ap_none | in        | 32       |
+| w      | ap_none | in        | 8        |
+| win    | ap_none | in        | 32       |
+| x      | ap_none | in        | 8        |
+| zout   | ap_none | in        | 32       |
+| zx     | ap_none | in        | 32       |
++--------+---------+-----------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst    | reset      | ap_rst                            |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+---------------------+
+| Argument | Direction | Datatype            |
++----------+-----------+---------------------+
+| x        | in        | signed char const * |
+| w        | in        | signed char const * |
+| b        | in        | int const *         |
+| zx       | in        | int                 |
+| mult     | in        | int const *         |
+| shift    | in        | int const *         |
+| zout     | in        | int                 |
+| hin      | in        | int                 |
+| win      | in        | int                 |
+| cin      | in        | int                 |
+| cout     | in        | int                 |
+| kh       | in        | int                 |
+| kw       | in        | int                 |
+| stride   | in        | int                 |
+| pad      | in        | int                 |
+| out      | out       | signed char*        |
++----------+-----------+---------------------+
+
+* SW-to-HW Mapping
++----------+--------------+---------+
+| Argument | HW Interface | HW Type |
++----------+--------------+---------+
+| x        | x            | port    |
+| w        | w            | port    |
+| b        | b            | port    |
+| zx       | zx           | port    |
+| mult     | mult         | port    |
+| shift    | shift        | port    |
+| zout     | zout         | port    |
+| hin      | hin          | port    |
+| win      | win          | port    |
+| cin      | cin          | port    |
+| cout     | cout         | port    |
+| kh       | kh           | port    |
+| kw       | kw           | port    |
+| stride   | stride       | port    |
+| pad      | pad          | port    |
+| out      | out_r        | port    |
+| out      | out_r_ap_vld | port    |
++----------+--------------+---------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++-------------------------------------------------------------------------+-----+--------+---------------+--------+-----------+---------+
+| Name                                                                    | DSP | Pragma | Variable      | Op     | Impl      | Latency |
++-------------------------------------------------------------------------+-----+--------+---------------+--------+-----------+---------+
+| + conv2d_int8                                                           | 21  |        |               |        |           |         |
+|   sdiv_32ns_32s_32_36_seq_1_U20                                         |     |        | sdiv_ln30     | sdiv   | auto_seq  | 35      |
+|   hout_fu_410_p2                                                        |     |        | hout          | add    | fabric    | 0       |
+|   sdiv_32ns_32s_32_36_seq_1_U21                                         |     |        | sdiv_ln31     | sdiv   | auto_seq  | 35      |
+|   wout_fu_416_p2                                                        |     |        | wout          | add    | fabric    | 0       |
+|   cmp1212_fu_422_p2                                                     |     |        | cmp1212       | setgt  | auto      | 0       |
+|   cmp_i_fu_442_p2                                                       |     |        | cmp_i         | setgt  | auto      | 0       |
+|   den_assign_fu_452_p2                                                  |     |        | den_assign    | shl    | auto_pipe | 0       |
+|   sub_i_i_fu_458_p2                                                     |     |        | sub_i_i       | sub    | fabric    | 0       |
+|   empty_13_fu_352_p2                                                    |     |        | empty_13      | setgt  | auto      | 0       |
+|   smax_fu_358_p3                                                        |     |        | smax          | select | auto_sel  | 0       |
+|   empty_14_fu_375_p2                                                    |     |        | empty_14      | setgt  | auto      | 0       |
+|   smax1_fu_380_p3                                                       |     |        | smax1         | select | auto_sel  | 0       |
+|   mul_31ns_31ns_62_1_1_U17                                              | 4   |        | mul_ln23      | mul    | auto      | 0       |
+|   empty_15_fu_396_p2                                                    |     |        | empty_15      | setgt  | auto      | 0       |
+|   smax3_fu_402_p3                                                       |     |        | smax3         | select | auto_sel  | 0       |
+|   mul_31ns_62ns_93_1_1_U18                                              | 8   |        | mul_ln23_1    | mul    | auto      | 0       |
+|   icmp_ln32_fu_479_p2                                                   |     |        | icmp_ln32     | setlt  | auto      | 0       |
+|   add_ln32_fu_484_p2                                                    |     |        | add_ln32      | add    | fabric    | 0       |
+|   add_ln33_1_fu_490_p2                                                  |     |        | add_ln33_1    | add    | fabric    | 0       |
+|   icmp_ln33_fu_499_p2                                                   |     |        | icmp_ln33     | setlt  | auto      | 0       |
+|   add_ln33_fu_504_p2                                                    |     |        | add_ln33      | add    | fabric    | 0       |
+|   empty_16_fu_510_p2                                                    |     |        | empty_16      | sub    | fabric    | 0       |
+|   add_ln34_1_fu_519_p2                                                  |     |        | add_ln34_1    | add    | fabric    | 0       |
+|   icmp_ln34_fu_528_p2                                                   |     |        | icmp_ln34     | setlt  | auto      | 0       |
+|   add_ln34_fu_533_p2                                                    |     |        | add_ln34      | add    | fabric    | 0       |
+|   mul_64s_32s_64_1_1_U19                                                | 7   |        | product       | mul    | auto      | 0       |
+|   sub_ln49_fu_554_p2                                                    |     |        | sub_ln49      | sub    | fabric    | 0       |
+|   lshr_ln49_fu_559_p2                                                   |     |        | lshr_ln49     | lshr   | auto_pipe | 0       |
+|   sub_ln49_1_fu_568_p2                                                  |     |        | sub_ln49_1    | sub    | fabric    | 0       |
+|   lshr_ln49_1_fu_574_p2                                                 |     |        | lshr_ln49_1   | lshr   | auto_pipe | 0       |
+|   q_fu_582_p3                                                           |     |        | q             | select | auto_sel  | 0       |
+|   srem_64ns_64ns_64_68_seq_1_U22                                        |     |        | r             | srem   | auto_seq  | 67      |
+|   icmp_ln52_fu_603_p2                                                   |     |        | icmp_ln52     | setgt  | auto      | 0       |
+|   icmp_ln52_1_fu_608_p2                                                 |     |        | icmp_ln52_1   | seteq  | auto      | 0       |
+|   and_ln52_fu_613_p2                                                    |     |        | and_ln52      | and    | auto      | 0       |
+|   or_ln52_fu_618_p2                                                     |     |        | or_ln52       | or     | auto      | 0       |
+|   icmp_ln53_fu_624_p2                                                   |     |        | icmp_ln53     | setlt  | auto      | 0       |
+|   icmp_ln53_1_fu_629_p2                                                 |     |        | icmp_ln53_1   | seteq  | auto      | 0       |
+|   and_ln53_fu_634_p2                                                    |     |        | and_ln53      | and    | auto      | 0       |
+|   or_ln53_fu_639_p2                                                     |     |        | or_ln53       | or     | auto      | 0       |
+|   add_ln53_fu_645_p2                                                    |     |        | add_ln53      | add    | fabric    | 0       |
+|   select_ln53_fu_651_p3                                                 |     |        | select_ln53   | select | auto_sel  | 0       |
+|   q_1_fu_659_p2                                                         |     |        | q_1           | add    | fabric    | 0       |
+|   add_ln71_fu_665_p2                                                    |     |        | add_ln71      | add    | fabric    | 0       |
+|   icmp_ln58_fu_670_p2                                                   |     |        | icmp_ln58     | setlt  | auto      | 0       |
+|   icmp_ln59_fu_686_p2                                                   |     |        | icmp_ln59     | setgt  | auto      | 0       |
+|   select_ln50_fu_696_p3                                                 |     |        | select_ln50   | select | auto_sel  | 0       |
+|   or_ln50_fu_704_p2                                                     |     |        | or_ln50       | or     | auto      | 0       |
+|   select_ln50_1_fu_710_p3                                               |     |        | select_ln50_1 | select | auto_sel  | 0       |
+|  + conv2d_int8_Pipeline_VITIS_LOOP_36_4_VITIS_LOOP_37_5_VITIS_LOOP_38_6 | 2   |        |               |        |           |         |
+|    icmp_ln38_fu_248_p2                                                  |     |        | icmp_ln38     | setlt  | auto      | 0       |
+|    icmp_ln36_fu_253_p2                                                  |     |        | icmp_ln36     | seteq  | auto      | 0       |
+|    add_ln36_fu_258_p2                                                   |     |        | add_ln36      | add    | fabric    | 0       |
+|    icmp_ln37_fu_267_p2                                                  |     |        | icmp_ln37     | seteq  | auto      | 0       |
+|    select_ln35_fu_345_p3                                                |     |        | select_ln35   | select | auto_sel  | 0       |
+|    select_ln35_1_fu_272_p3                                              |     |        | select_ln35_1 | select | auto_sel  | 0       |
+|    select_ln35_2_fu_280_p3                                              |     |        | select_ln35_2 | select | auto_sel  | 0       |
+|    add_ln37_fu_352_p2                                                   |     |        | add_ln37      | add    | fabric    | 0       |
+|    select_ln37_fu_287_p3                                                |     |        | select_ln37   | select | auto_sel  | 0       |
+|    select_ln37_1_fu_358_p3                                              |     |        | select_ln37_1 | select | auto_sel  | 0       |
+|    empty_17_fu_369_p2                                                   |     |        | empty_17      | add    | fabric    | 0       |
+|    rev_fu_382_p2                                                        |     |        | rev           | xor    | auto      | 0       |
+|    cmp34_fu_388_p2                                                      |     |        | cmp34         | setlt  | auto      | 0       |
+|    xor_ln42_fu_414_p2                                                   |     |        | xor_ln42      | xor    | auto      | 0       |
+|    icmp_ln42_fu_420_p2                                                  |     |        | icmp_ln42     | setlt  | auto      | 0       |
+|    and_ln42_fu_425_p2                                                   |     |        | and_ln42      | and    | auto      | 0       |
+|    and_ln42_2_fu_431_p2                                                 |     |        | and_ln42_2    | and    | auto      | 0       |
+|    and_ln42_1_fu_437_p2                                                 |     |        | and_ln42_1    | and    | auto      | 0       |
+|    sub_ln43_fu_295_p2                                                   |     |        | sub_ln43      | sub    | fabric    | 0       |
+|    mul_33s_8s_41_1_1_U1                                                 | 2   |        | mul_ln44      | mul    | auto      | 0       |
+|    acc_2_fu_446_p2                                                      |     |        | acc_2         | add    | fabric    | 0       |
+|    acc_3_fu_452_p3                                                      |     |        | acc_3         | select | auto_sel  | 0       |
+|    add_ln38_fu_304_p2                                                   |     |        | add_ln38      | add    | fabric    | 0       |
+|    add_ln37_1_fu_310_p2                                                 |     |        | add_ln37_1    | add    | fabric    | 0       |
+|    select_ln37_2_fu_316_p3                                              |     |        | select_ln37_2 | select | auto_sel  | 0       |
++-------------------------------------------------------------------------+-----+--------+---------------+--------+-----------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
+  No bind storage info in design
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++----------+---------+----------------------------------------------+
+| Type     | Options | Location                                     |
++----------+---------+----------------------------------------------+
+| pipeline | II = 1  | conv_kernels.cpp:39 in conv2d_int8           |
+| pipeline | II = 1  | conv_kernels.cpp:71 in depthwise_conv2d_int8 |
++----------+---------+----------------------------------------------+
+
+

@@ -1,0 +1,44 @@
+{
+  "0": {
+    "basicblocks": 42,
+    "calls": "2",
+    "file": "conv_kernels.cpp",
+    "fileloc": 23,
+    "instructions": 125,
+    "loads": {
+      "T": 5
+    },
+    "name": "conv2d_int8",
+    "stores": {
+      "T": 1
+    },
+    "total_instructions": 178
+  },
+  "1": {
+    "basicblocks": 6,
+    "calls": "",
+    "file": "mgr1_types.h",
+    "fileloc": 57,
+    "instructions": 12,
+    "name": "sat",
+    "total_instructions": 12
+  },
+  "2": {
+    "basicblocks": 4,
+    "calls": "3 1",
+    "file": "mgr1_types.h",
+    "fileloc": 66,
+    "instructions": 14,
+    "name": "requantize",
+    "total_instructions": 53
+  },
+  "3": {
+    "basicblocks": 10,
+    "calls": "",
+    "file": "mgr1_types.h",
+    "fileloc": 48,
+    "instructions": 27,
+    "name": "round_half_even",
+    "total_instructions": 27
+  }
+}

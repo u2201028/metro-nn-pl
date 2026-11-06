@@ -1,0 +1,265 @@
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+  **** SW Build 5238294 on Nov  8 2024
+  **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+  **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+  **** Start of session at: Fri Nov  6 16:35:42 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source F:/Vitis/2024.2/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] For user 'Administrator' on host 'desktop-o79nmfg' (Windows NT_amd64 version 10.0) on Fri Nov 06 16:35:42 +0530 2026
+INFO: [HLS 200-10] In directory 'F:/metro-nn-pl/hls/gru_sequence'
+WARNING: [HLS 200-2053] The vitis_hls executable is deprecated. Consider using vitis-run --mode hls --tcl
+Sourcing Tcl script 'export_only.tcl'
+INFO: [HLS 200-1510] Running: open_project -reset mgr1_gru_prj 
+INFO: [HLS 200-10] Opening and resetting project 'F:/metro-nn-pl/hls/gru_sequence/mgr1_gru_prj'.
+INFO: [HLS 200-1510] Running: set_top gru_step 
+INFO: [HLS 200-1510] Running: add_files ../common/activation_luts.cpp 
+INFO: [HLS 200-10] Adding design file '../common/activation_luts.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files ./gru_top.cpp -cflags -std=c++17 -I../common 
+INFO: [HLS 200-10] Adding design file './gru_top.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb ./tb_gru.cpp -cflags -I../common 
+INFO: [HLS 200-10] Adding test bench file './tb_gru.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb ../../vectors/golden/gru_window.vec 
+INFO: [HLS 200-10] Adding test bench file '../../vectors/golden/gru_window.vec' to the project
+INFO: [HLS 200-1510] Running: open_solution sol1 -flow_target vivado 
+INFO: [HLS 200-10] Creating and opening solution 'F:/metro-nn-pl/hls/gru_sequence/mgr1_gru_prj/sol1'.
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xck26-sfvc784-2LV-c 
+INFO: [HLS 200-1611] Setting target device to 'xck26-sfvc784-2LV-c'
+INFO: [HLS 200-1510] Running: create_clock -period 6.67 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 6.67ns.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.073 seconds; current allocated memory: 158.250 MB.
+INFO: [HLS 200-10] Analyzing design file 'gru_top.cpp' ... 
+WARNING: [HLS 207-5292] unused parameter 'mult_gh' (gru_top.cpp:34:23)
+WARNING: [HLS 207-5292] unused parameter 'shift_gh' (gru_top.cpp:34:40)
+INFO: [HLS 200-10] Analyzing design file '../common/activation_luts.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 2.353 seconds; current allocated memory: 160.984 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-1995] There were 514 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: F:/metro-nn-pl/hls/gru_sequence/mgr1_gru_prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 412 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: F:/metro-nn-pl/hls/gru_sequence/mgr1_gru_prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 331 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: F:/metro-nn-pl/hls/gru_sequence/mgr1_gru_prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 275 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: F:/metro-nn-pl/hls/gru_sequence/mgr1_gru_prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 250 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: F:/metro-nn-pl/hls/gru_sequence/mgr1_gru_prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 247 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: F:/metro-nn-pl/hls/gru_sequence/mgr1_gru_prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 247 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: F:/metro-nn-pl/hls/gru_sequence/mgr1_gru_prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 247 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: F:/metro-nn-pl/hls/gru_sequence/mgr1_gru_prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 247 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: F:/metro-nn-pl/hls/gru_sequence/mgr1_gru_prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 252 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: F:/metro-nn-pl/hls/gru_sequence/mgr1_gru_prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 252 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: F:/metro-nn-pl/hls/gru_sequence/mgr1_gru_prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 250 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: F:/metro-nn-pl/hls/gru_sequence/mgr1_gru_prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 247 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: F:/metro-nn-pl/hls/gru_sequence/mgr1_gru_prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 247 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: F:/metro-nn-pl/hls/gru_sequence/mgr1_gru_prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 258 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: F:/metro-nn-pl/hls/gru_sequence/mgr1_gru_prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 273 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: F:/metro-nn-pl/hls/gru_sequence/mgr1_gru_prj/sol1/syn/report/csynth_design_size.rpt
+INFO: [HLS 214-178] Inlining function 'mgr1::round_half_even(long long, long long)' into 'mgr1::requantize(long long, int, int, int, int, int)' (../common\mgr1_types.h:67:0)
+INFO: [HLS 214-178] Inlining function 'mgr1::sat(int, int, long long)' into 'mgr1::requantize(long long, int, int, int, int, int)' (../common\mgr1_types.h:67:0)
+INFO: [HLS 214-178] Inlining function 'mgr1::sat(int, int, long long)' into 'mgr1::sigmoid_q15(int)' (../common/activation_luts.cpp:19:0)
+INFO: [HLS 214-178] Inlining function 'mgr1::sat(int, int, long long)' into 'mgr1::tanh_q15(int)' (../common/activation_luts.cpp:23:0)
+INFO: [HLS 214-178] Inlining function 'mgr1::requantize(long long, int, int, int, int, int)' into 'mgr1::gru_step(int const*, int const*, signed char const*, signed char const*, int const*, int const*, int, int, int, int, int*, int)' (gru_top.cpp:35:0)
+INFO: [HLS 214-178] Inlining function 'mgr1::sigmoid_q15(int)' into 'mgr1::gru_step(int const*, int const*, signed char const*, signed char const*, int const*, int const*, int, int, int, int, int*, int)' (gru_top.cpp:35:0)
+INFO: [HLS 214-178] Inlining function 'mgr1::tanh_q15(int)' into 'mgr1::gru_step(int const*, int const*, signed char const*, signed char const*, int const*, int const*, int, int, int, int, int*, int)' (gru_top.cpp:35:0)
+INFO: [HLS 214-178] Inlining function 'mgr1::round_half_even(long long, long long)' into 'mgr1::gru_step(int const*, int const*, signed char const*, signed char const*, int const*, int const*, int, int, int, int, int*, int)' (gru_top.cpp:35:0)
+INFO: [HLS 214-178] Inlining function 'mgr1::sat(int, int, long long)' into 'mgr1::gru_step(int const*, int const*, signed char const*, signed char const*, int const*, int const*, int, int, int, int, int*, int)' (gru_top.cpp:35:0)
+WARNING: [HLS 214-450] Ignore address on register port 'b_ih' (gru_top.cpp:44:23)
+WARNING: [HLS 214-450] Ignore address on register port 'w_ih' (gru_top.cpp:47:30)
+WARNING: [HLS 214-450] Ignore address on register port 'x' (gru_top.cpp:47:52)
+WARNING: [HLS 214-450] Ignore address on register port 'b_hh' (gru_top.cpp:53:23)
+WARNING: [HLS 214-450] Ignore address on register port 'w_hh' (gru_top.cpp:56:30)
+WARNING: [HLS 214-450] Ignore address on register port 'h_prev' (gru_top.cpp:56:54)
+WARNING: [HLS 214-450] Ignore address on register port 'h_prev' (gru_top.cpp:78:45)
+WARNING: [HLS 214-450] Ignore address on register port 'h_out' (gru_top.cpp:84:18)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 7.553 seconds; current allocated memory: 163.035 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.001 seconds; current allocated memory: 163.035 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.054 seconds; current allocated memory: 172.098 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.049 seconds; current allocated memory: 174.043 MB.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (../common\mgr1_types.h:48:40) to (../common\mgr1_types.h:52:18) in function 'mgr1::gru_step'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (gru_top.cpp:77:9) to (gru_top.cpp:76:22) in function 'mgr1::gru_step'... converting 11 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.185 seconds; current allocated memory: 198.066 MB.
+WARNING: [XFORM 203-561] Updating loop upper bound from -1 to 511 for loop 'VITIS_LOOP_52_3' in function 'mgr1::gru_step'.
+WARNING: [XFORM 203-561] Updating loop upper bound from -1 to 255 for loop 'VITIS_LOOP_76_6' in function 'mgr1::gru_step'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.208 seconds; current allocated memory: 228.699 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'gru_step' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'gru_step_Outline_VITIS_LOOP_43_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.142 seconds; current allocated memory: 231.664 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.059 seconds; current allocated memory: 232.738 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'gru_step_Outline_VITIS_LOOP_52_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.052 seconds; current allocated memory: 232.785 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.048 seconds; current allocated memory: 232.785 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'gru_step_Pipeline_VITIS_LOOP_61_5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_61_5'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 73, loop 'VITIS_LOOP_61_5'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.123 seconds; current allocated memory: 233.578 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.067 seconds; current allocated memory: 233.684 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'gru_step_Pipeline_VITIS_LOOP_76_6' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_76_6'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 54, loop 'VITIS_LOOP_76_6'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.157 seconds; current allocated memory: 234.484 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.066 seconds; current allocated memory: 234.906 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'gru_step' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.096 seconds; current allocated memory: 235.535 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.054 seconds; current allocated memory: 235.707 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'gru_step_Outline_VITIS_LOOP_43_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'gru_step_Outline_VITIS_LOOP_43_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.049 seconds; current allocated memory: 237.129 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'gru_step_Outline_VITIS_LOOP_52_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'gru_step_Outline_VITIS_LOOP_52_3'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.061 seconds; current allocated memory: 238.270 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'gru_step_Pipeline_VITIS_LOOP_61_5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'gru_step_Pipeline_VITIS_LOOP_61_5' pipeline 'VITIS_LOOP_61_5' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-104] Estimated max fanout for 'gru_step_Pipeline_VITIS_LOOP_61_5' is 9529 from HDL expression: (1'b0 == ap_block_pp0_stage0_11001)
+INFO: [RTGEN 206-100] Generating core module 'mul_33s_32s_64_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'srem_64ns_64ns_64_68_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'gru_step_Pipeline_VITIS_LOOP_61_5'.
+INFO: [RTMG 210-279] Implementing memory 'gru_step_gru_step_Pipeline_VITIS_LOOP_61_5_MGR1_SIGMOID_LUT_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'gru_step_gru_step_Pipeline_VITIS_LOOP_61_5_MGR1_TANH_LUT_ROM_AUTO_1R' using auto ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.288 seconds; current allocated memory: 255.730 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'gru_step_Pipeline_VITIS_LOOP_76_6' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'gru_step_Pipeline_VITIS_LOOP_76_6' pipeline 'VITIS_LOOP_76_6' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_15ns_32s_47_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_16s_15ns_31_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_31s_33ns_63_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_47s_49ns_95_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'srem_31s_16ns_31_35_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'srem_47s_16ns_47_51_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'gru_step_Pipeline_VITIS_LOOP_76_6'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.323 seconds; current allocated memory: 255.730 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'gru_step' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'gru_step/x' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'gru_step/h_prev' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'gru_step/w_ih' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'gru_step/w_hh' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'gru_step/b_ih' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'gru_step/b_hh' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'gru_step/mult_gx' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'gru_step/shift_gx' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'gru_step/mult_gh' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'gru_step/shift_gh' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'gru_step/h_out' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'gru_step/h_size' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'gru_step' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Port 'gru_step/mult_gh' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'gru_step/shift_gh' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+INFO: [RTGEN 206-100] Generating core module 'mul_19s_32s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_31ns_8s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'gru_step'.
+INFO: [RTMG 210-278] Implementing memory 'gru_step_a_ar_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'gru_step_z_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'gru_step_n_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.382 seconds; current allocated memory: 255.730 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.352 seconds; current allocated memory: 255.730 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.478 seconds; current allocated memory: 258.340 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for gru_step.
+INFO: [VLOG 209-307] Generating Verilog RTL for gru_step.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 205.83 MHz
+INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:13; Allocated memory: 100.453 MB.
+INFO: [HLS 200-1510] Running: export_design -format ip_catalog -output ./mgr1_gru_ip.zip 
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+WARNING: F:/vivado/2024.2/tps/win64/jre11.0.16_1 does not exist.
+
+****** Vivado v2024.2 (64-bit)
+  **** SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+  **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+  **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+  **** Start of session at: Fri Nov  6 16:35:58 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source run_ippack.tcl -notrace
+INFO: calling package_hls_ip ip_types=vitis sysgen json_file=F:/metro-nn-pl/hls/gru_sequence/mgr1_gru_prj/sol1/sol1_data.json outdir=F:/metro-nn-pl/hls/gru_sequence/mgr1_gru_prj/sol1/impl/ip srcdir=F:/metro-nn-pl/hls/gru_sequence/mgr1_gru_prj/sol1 sort_interfaces_ports=false
+INFO: Copied 1 ipmisc file(s) to F:/metro-nn-pl/hls/gru_sequence/mgr1_gru_prj/sol1/impl/ip/misc
+INFO: Copied 24 verilog file(s) to F:/metro-nn-pl/hls/gru_sequence/mgr1_gru_prj/sol1/impl/ip/hdl/verilog
+INFO: Copied 22 vhdl file(s) to F:/metro-nn-pl/hls/gru_sequence/mgr1_gru_prj/sol1/impl/ip/hdl/vhdl
+INFO: Import ports from HDL: F:/metro-nn-pl/hls/gru_sequence/mgr1_gru_prj/sol1/impl/ip/hdl/vhdl/gru_step.vhd (gru_step)
+INFO: Add clock interface ap_clk
+INFO: Add reset interface ap_rst
+INFO: Add ap_ctrl interface ap_ctrl
+INFO: Add data interface x
+INFO: Add data interface h_prev
+INFO: Add data interface w_ih
+INFO: Add data interface w_hh
+INFO: Add data interface b_ih
+INFO: Add data interface b_hh
+INFO: Add data interface mult_gx
+INFO: Add data interface shift_gx
+INFO: Add data interface mult_gh
+INFO: Add data interface shift_gh
+INFO: Add data interface h_out
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'F:/vivado/2024.2/data/ip'.
+INFO: Add data interface h_size
+INFO: Calling post_process_vitis to specialize IP
+INFO: Calling post_process_sysgen to specialize IP
+Generating sysgen info xml from json file
+INFO: Created IP F:/metro-nn-pl/hls/gru_sequence/mgr1_gru_prj/sol1/impl/ip/component.xml
+INFO: Created IP archive F:/metro-nn-pl/hls/gru_sequence/mgr1_gru_prj/sol1/impl/ip/xilinx_com_hls_gru_step_1_0.zip
+INFO: [Common 17-206] Exiting Vivado at Fri Nov  6 16:36:05 2026...
+INFO: [HLS 200-802] Generated output file mgr1_gru_ip.zip
+INFO: [HLS 200-2161] Finished Command export_design Elapsed time: 00:00:09; Allocated memory: 3.836 MB.
+INFO: [HLS 200-112] Total CPU user time: 4 seconds. Total CPU system time: 1 seconds. Total elapsed time: 24.145 seconds; peak allocated memory: 262.422 MB.

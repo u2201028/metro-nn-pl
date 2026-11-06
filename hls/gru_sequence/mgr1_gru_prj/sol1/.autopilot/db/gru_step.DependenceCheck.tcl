@@ -1,0 +1,30 @@
+
+
+set RtlHierarchyInfo {[
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST"},
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.a_ar_U"},
+	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.u_ar_U"},
+	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.z_U"},
+	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.n_U"},
+	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_gru_step_Outline_VITIS_LOOP_43_1_fu_163"},
+	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_gru_step_Outline_VITIS_LOOP_52_3_fu_170"},
+	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_gru_step_Pipeline_VITIS_LOOP_61_5_fu_177"},
+	{"ID" : "8", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_gru_step_Pipeline_VITIS_LOOP_61_5_fu_177.MGR1_SIGMOID_LUT_U"},
+	{"ID" : "9", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_gru_step_Pipeline_VITIS_LOOP_61_5_fu_177.MGR1_TANH_LUT_U"},
+	{"ID" : "10", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_gru_step_Pipeline_VITIS_LOOP_61_5_fu_177.mul_33s_32s_64_1_1_U7"},
+	{"ID" : "11", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_gru_step_Pipeline_VITIS_LOOP_61_5_fu_177.mul_33s_32s_64_1_1_U8"},
+	{"ID" : "12", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_gru_step_Pipeline_VITIS_LOOP_61_5_fu_177.srem_64ns_64ns_64_68_1_U9"},
+	{"ID" : "13", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_gru_step_Pipeline_VITIS_LOOP_61_5_fu_177.srem_64ns_64ns_64_68_1_U10"},
+	{"ID" : "14", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_gru_step_Pipeline_VITIS_LOOP_61_5_fu_177.flow_control_loop_pipe_sequential_init_U"},
+	{"ID" : "15", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_gru_step_Pipeline_VITIS_LOOP_76_6_fu_197"},
+	{"ID" : "16", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_gru_step_Pipeline_VITIS_LOOP_76_6_fu_197.mul_15ns_32s_47_1_1_U27"},
+	{"ID" : "17", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_gru_step_Pipeline_VITIS_LOOP_76_6_fu_197.mul_31s_33ns_63_1_1_U28"},
+	{"ID" : "18", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_gru_step_Pipeline_VITIS_LOOP_76_6_fu_197.mul_47s_49ns_95_1_1_U29"},
+	{"ID" : "19", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_gru_step_Pipeline_VITIS_LOOP_76_6_fu_197.srem_47s_16ns_47_51_1_U30"},
+	{"ID" : "20", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_gru_step_Pipeline_VITIS_LOOP_76_6_fu_197.mul_16s_15ns_31_1_1_U31"},
+	{"ID" : "21", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_gru_step_Pipeline_VITIS_LOOP_76_6_fu_197.srem_31s_16ns_31_35_1_U32"},
+	{"ID" : "22", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_gru_step_Pipeline_VITIS_LOOP_76_6_fu_197.flow_control_loop_pipe_sequential_init_U"},
+	{"ID" : "23", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_19s_32s_32_1_1_U44"},
+	{"ID" : "24", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_31ns_8s_32_1_1_U45"},
+	{"ID" : "25", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_32s_32s_32_1_1_U46"}]}
+set DependenceCheckSize 0

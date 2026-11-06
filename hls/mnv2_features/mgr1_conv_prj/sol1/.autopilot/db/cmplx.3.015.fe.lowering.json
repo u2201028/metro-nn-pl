@@ -1,0 +1,17 @@
+{
+  "0": {
+    "basicblocks": 26,
+    "calls": "",
+    "file": "conv_kernels.cpp",
+    "fileloc": 23,
+    "instructions": 163,
+    "loads": {
+      "T": 5
+    },
+    "name": "conv2d_int8",
+    "stores": {
+      "T": 1
+    },
+    "total_instructions": 163
+  }
+}

@@ -1,0 +1,67 @@
+---
+MainSourceFile:  'F:/metro-nn-pl/hls/gru_sequence/mgr1_gru_prj/sol1/.autopilot/db/gru_top.pp.0.cpp'
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_43_1:  '
+    FileOffset:      43
+    FilePath:        gru_top.cpp
+    Replacements:    
+      - FilePath:        'F:\metro-nn-pl\hls\gru_sequence\mgr1_gru_prj\sol1\.autopilot\db\gru_top.pp.0.cpp'
+        Offset:          64005
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_43_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_45_2:  '
+    FileOffset:      45
+    FilePath:        gru_top.cpp
+    Replacements:    
+      - FilePath:        'F:\metro-nn-pl\hls\gru_sequence\mgr1_gru_prj\sol1\.autopilot\db\gru_top.pp.0.cpp'
+        Offset:          64083
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_45_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_52_3:  '
+    FileOffset:      52
+    FilePath:        gru_top.cpp
+    Replacements:    
+      - FilePath:        'F:\metro-nn-pl\hls\gru_sequence\mgr1_gru_prj\sol1\.autopilot\db\gru_top.pp.0.cpp'
+        Offset:          64267
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_52_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_54_4:  '
+    FileOffset:      54
+    FilePath:        gru_top.cpp
+    Replacements:    
+      - FilePath:        'F:\metro-nn-pl\hls\gru_sequence\mgr1_gru_prj\sol1\.autopilot\db\gru_top.pp.0.cpp'
+        Offset:          64345
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_54_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_61_5:  '
+    FileOffset:      61
+    FilePath:        gru_top.cpp
+    Replacements:    
+      - FilePath:        'F:\metro-nn-pl\hls\gru_sequence\mgr1_gru_prj\sol1\.autopilot\db\gru_top.pp.0.cpp'
+        Offset:          64538
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_61_5: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_76_6:  '
+    FileOffset:      76
+    FilePath:        gru_top.cpp
+    Replacements:    
+      - FilePath:        'F:\metro-nn-pl\hls\gru_sequence\mgr1_gru_prj\sol1\.autopilot\db\gru_top.pp.0.cpp'
+        Offset:          65158
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_76_6: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_91_1:  '
+    FileOffset:      91
+    FilePath:        gru_top.cpp
+    Replacements:    
+      - FilePath:        'F:\metro-nn-pl\hls\gru_sequence\mgr1_gru_prj\sol1\.autopilot\db\gru_top.pp.0.cpp'
+        Offset:          65758
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_91_1: '
+...

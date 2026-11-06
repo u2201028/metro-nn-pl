@@ -1,0 +1,36 @@
+{
+ "format": "MGR1VEC 1",
+ "oracle": "model/integer_oracle/oracle.py",
+ "files": {
+  "conv_sentinels.vec": {
+   "sha256": "2cd830fa6b06006d4ea9e1704c1adf83f4eff2b6f8c8d7e08dcb029b5afb5010"
+  },
+  "gru_window.vec": {
+   "sha256": "f5aa877f338a609b8b1f2914610ab320d47cabef35ef686098efd2e833fb898c"
+  }
+ },
+ "formats": {
+  "weights": "INT8 symmetric, per-output-channel scale",
+  "activations": "INT8 per-tensor scale, zero point = real zero",
+  "accumulators": "INT32",
+  "gate_inputs": "Q7.10 (INT16), round-half-to-even",
+  "gate_outputs": "Q1.15 (INT16)",
+  "hidden": "Q7.8 (INT8) committed; Q1.15 in flight"
+ },
+ "conv_sentinels": {
+  "cases": [
+   "zero_point_input",
+   "center_impulse",
+   "corner_impulse",
+   "tie_positive",
+   "tie_negative",
+   "most_negative",
+   "zero_point_check"
+  ]
+ },
+ "gru": {
+  "window": 32,
+  "hidden": 128,
+  "input_dim": 1280
+ }
+}

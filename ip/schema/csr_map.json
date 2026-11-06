@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "description": "External shell CSR map, roadmap Section 11 register worksheet. One authoritative schema generates register docs, C/Python accessors, SV decode constants and HWH cross-checks. Byte-addressed, 32-bit aligned.",
+  "access_width_bytes": 4,
+  "registers": [
+    {"name": "ID",         "offset": "0x00", "access": "RO", "desc": "IP identifier; low 16 bits magic 0x4D47 ('MG'), high 16 bits revision."},
+    {"name": "ABI",        "offset": "0x04", "access": "RO", "desc": "Packet ABI major in [7:0], minor in [15:8]."},
+    {"name": "CAPS",       "offset": "0x08", "access": "RO", "desc": "Capability bitfield: bit0 streaming input, bit1 DMA input, bit2 model reload, bit3 multi-stream."},
+    {"name": "LIMITS",     "offset": "0x0C", "access": "RO", "desc": "Compact profile/limit descriptor index into an immutable capability record."},
+    {"name": "COMMAND",    "offset": "0x10", "access": "WO", "desc": "Write one full command word. States: idle, loading, ready, busy, fault. Illegal transitions are rejected."},
+    {"name": "STATUS",     "offset": "0x14", "access": "RO", "desc": "Current state plus busy/valid flags."},
+    {"name": "ERROR",      "offset": "0x18", "access": "RO", "desc": "Sticky cause; retains the first fault until acknowledged via CLEAR_FAULT."},
+    {"name": "IRQ_STATUS", "offset": "0x1C", "access": "W1C", "desc": "Write-one-to-clear. IRQ clear removes only consumed sources."},
+    {"name": "DESC_LO",    "offset": "0x20", "access": "RW", "desc": "Descriptor address low 32 bits; shadow, captured atomically on command."},
+    {"name": "DESC_HI",    "offset": "0x24", "access": "RW", "desc": "Descriptor address high 32 bits; shadow."},
+    {"name": "DESC_LEN",   "offset": "0x28", "access": "RW", "desc": "Descriptor length in bytes; shadow."},
+    {"name": "ARG",        "offset": "0x2C", "access": "RW", "desc": "Command argument word; shadow."},
+    {"name": "MODEL_GEN",  "offset": "0x30", "access": "RO", "desc": "Committed model generation; confirmation of commit/configuration."},
+    {"name": "STREAM_EPOCH","offset": "0x34", "access": "RO", "desc": "Selected stream epoch from the accepted configuration."},
+    {"name": "IRQ_MASK",   "offset": "0x38", "access": "RW", "desc": "Interrupt enable mask."},
+    {"name": "SNAP_SEQ",   "offset": "0x3C", "access": "RO", "desc": "Snapshot sequence; a snapshot command latches counters and advances this."},
+    {"name": "CNT_ACCEPTED",  "offset": "0x40", "access": "RO", "width": 8, "desc": "64-bit counter, low word at 0x40, high at 0x44."},
+    {"name": "CNT_COMPLETED", "offset": "0x48", "access": "RO", "width": 8, "desc": "64-bit counter, low then high."},
+    {"name": "CNT_ABORTED",   "offset": "0x50", "access": "RO", "width": 8, "desc": "64-bit counter, low then high."},
+    {"name": "CNT_REJECTED",  "offset": "0x58", "access": "RO", "width": 8, "desc": "64-bit counter, low then high."},
+    {"name": "CNT_BUSY_CYC",  "offset": "0x60", "access": "RO", "width": 8, "desc": "64-bit counter, low then high."},
+    {"name": "CNT_STALL_CYC", "offset": "0x68", "access": "RO", "width": 8, "desc": "64-bit counter, low then high."},
+    {"name": "CNT_DDR_RD",    "offset": "0x70", "access": "RO", "width": 8, "desc": "64-bit counter, low then high."},
+    {"name": "CNT_DDR_WR",    "offset": "0x78", "access": "RO", "width": 8, "desc": "64-bit counter, low then high."}
+  ],
+  "commands": {
+    "NOOP": 0, "LOAD": 1, "COMMIT": 2, "SUBMIT": 3, "SNAPSHOT": 4,
+    "CLEAR_FAULT": 5, "RESET_SCOPE_CORE": 6, "RESET_SCOPE_MODEL": 7
+  },
+  "states": {"IDLE": 0, "LOADING": 1, "READY": 2, "BUSY": 3, "FAULT": 4, "RECOVERING": 5},
+  "rules": [
+    "Honor WSTRB for writable bytes.",
+    "Writes to read-only state are ignored and leave read-only state unchanged.",
+    "Decouple AXI-Lite write-address and write-data capture so either may arrive first.",
+    "Hold BVALID/RVALID until handshake.",
+    "A sticky-error clear arriving in the same cycle as a new fault must preserve the new event."
+  ]
+}

@@ -1,0 +1,257 @@
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: '../common\mgr1_types.h', Line: 69, Column: 37 }
+Function:        _ZN4mgr110requantizeExiiiii
+Args:            
+  - Callee:          'mgr1::round_half_even(long long, long long)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 48, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'mgr1::requantize(long long, int, int, int, int, int)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 67, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: '../common\mgr1_types.h', Line: 71, Column: 12 }
+Function:        _ZN4mgr110requantizeExiiiii
+Args:            
+  - Callee:          'mgr1::sat(int, int, long long)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 57, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'mgr1::requantize(long long, int, int, int, int, int)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 67, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: conv_kernels.cpp, Line: 50, Column: 41 }
+Function:        _ZN4mgr111conv2d_int8EPKaS1_PKiiS3_S3_iiiiiiiiiPa
+Args:            
+  - Callee:          'mgr1::requantize(long long, int, int, int, int, int)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 67, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'mgr1::conv2d_int8(signed char const*, signed char const*, int const*, int, int const*, int const*, int, int, int, int, int, int, int, int, int, signed char*)'
+    DebugLoc:        { File: conv_kernels.cpp, Line: 29, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: '../common\mgr1_types.h', Line: 69, Column: 37 }
+Function:        _ZN4mgr110requantizeExiiiii
+Args:            
+  - Callee:          'mgr1::round_half_even(long long, long long)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 48, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'mgr1::requantize(long long, int, int, int, int, int)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 67, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: '../common\mgr1_types.h', Line: 71, Column: 12 }
+Function:        _ZN4mgr110requantizeExiiiii
+Args:            
+  - Callee:          'mgr1::sat(int, int, long long)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 57, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'mgr1::requantize(long long, int, int, int, int, int)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 67, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: conv_kernels.cpp, Line: 50, Column: 41 }
+Function:        _ZN4mgr111conv2d_int8EPKaS1_PKiiS3_S3_iiiiiiiiiPa
+Args:            
+  - Callee:          'mgr1::requantize(long long, int, int, int, int, int)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 67, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'mgr1::conv2d_int8(signed char const*, signed char const*, int const*, int, int const*, int const*, int, int, int, int, int, int, int, int, int, signed char*)'
+    DebugLoc:        { File: conv_kernels.cpp, Line: 29, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+Function:        apatb_conv2d_int8_ir
+Args:            
+  - Callee:          'mgr1::conv2d_int8(signed char const*, signed char const*, int const*, int, int const*, int const*, int, int, int, int, int, int, int, int, int, signed char*)'
+    DebugLoc:        { File: conv_kernels.cpp, Line: 29, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          apatb_conv2d_int8_ir
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: '../common\mgr1_types.h', Line: 67, Column: 0 }
+Function:        _ZN4mgr110requantizeExiiiii
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'mgr1::round_half_even(long long, long long)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 48, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'mgr1::requantize(long long, int, int, int, int, int)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 67, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: '../common\mgr1_types.h', Line: 67, Column: 0 }
+Function:        _ZN4mgr110requantizeExiiiii
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'mgr1::sat(int, int, long long)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 57, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'mgr1::requantize(long long, int, int, int, int, int)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 67, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: conv_kernels.cpp, Line: 29, Column: 0 }
+Function:        _ZN4mgr111conv2d_int8EPKaS1_PKiiS3_S3_iiiiiiiiiPa
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'mgr1::requantize(long long, int, int, int, int, int)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 67, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'mgr1::conv2d_int8(signed char const*, signed char const*, int const*, int, int const*, int const*, int, int, int, int, int, int, int, int, int, signed char*)'
+    DebugLoc:        { File: conv_kernels.cpp, Line: 29, Column: 0 }
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+Function:        _ZN4mgr111conv2d_int8EPKaS1_PKiiS3_S3_iiiiiiiiiPa
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          b
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+Function:        _ZN4mgr111conv2d_int8EPKaS1_PKiiS3_S3_iiiiiiiiiPa
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          mult
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+Function:        _ZN4mgr111conv2d_int8EPKaS1_PKiiS3_S3_iiiiiiiiiPa
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          shift
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: conv_kernels.cpp, Line: 43, Column: 62 }
+Function:        _ZN4mgr111conv2d_int8EPKaS1_PKiiS3_S3_iiiiiiiiiPa
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          x
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: conv_kernels.cpp, Line: 44, Column: 40 }
+Function:        _ZN4mgr111conv2d_int8EPKaS1_PKiiS3_S3_iiiiiiiiiPa
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          w
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: conv_kernels.cpp, Line: 49, Column: 53 }
+Function:        _ZN4mgr111conv2d_int8EPKaS1_PKiiS3_S3_iiiiiiiiiPa
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          out
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+Function:        _ZN4mgr111conv2d_int8EPKaS1_PKiiS3_S3_iiiiiiiiiPa
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          b
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+Function:        _ZN4mgr111conv2d_int8EPKaS1_PKiiS3_S3_iiiiiiiiiPa
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          mult
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+Function:        _ZN4mgr111conv2d_int8EPKaS1_PKiiS3_S3_iiiiiiiiiPa
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          shift
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: conv_kernels.cpp, Line: 43, Column: 62 }
+Function:        _ZN4mgr111conv2d_int8EPKaS1_PKiiS3_S3_iiiiiiiiiPa
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          x
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: conv_kernels.cpp, Line: 44, Column: 40 }
+Function:        _ZN4mgr111conv2d_int8EPKaS1_PKiiS3_S3_iiiiiiiiiPa
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          w
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: conv_kernels.cpp, Line: 49, Column: 53 }
+Function:        _ZN4mgr111conv2d_int8EPKaS1_PKiiS3_S3_iiiiiiiiiPa
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          out
+  - String:          ''''
+...

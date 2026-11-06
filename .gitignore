@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+hls/*/tb_gru
+hls/*/tb_conv
+hls/*/*.o
+hls/*/*.exe
+hls/*/*.pdb
+hls/*/failure.txt
+vivado/*/
+vivado/*.jou
+vivado/*.log
+vivado/*.str
+.ipynb_checkpoints/

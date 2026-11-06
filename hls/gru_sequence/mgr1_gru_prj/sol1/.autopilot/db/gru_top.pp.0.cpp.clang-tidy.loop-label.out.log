@@ -1,0 +1,35 @@
+F:\metro-nn-pl\hls\gru_sequence\mgr1_gru_prj\sol1\.autopilot\db\gru_top.pp.0.cpp:2033:5: warning: Added loop label VITIS_LOOP_43_1:   [xilinx-label-all-loops]
+    for (int i = 0; i < 3 * h_size; ++i) {
+    ^~~
+    VITIS_LOOP_43_1: 
+F:\metro-nn-pl\hls\gru_sequence\mgr1_gru_prj\sol1\.autopilot\db\gru_top.pp.0.cpp:2033:5: note: FIX-IT applied suggested code changes
+F:\metro-nn-pl\hls\gru_sequence\mgr1_gru_prj\sol1\.autopilot\db\gru_top.pp.0.cpp:2035:9: warning: Added loop label VITIS_LOOP_45_2:   [xilinx-label-all-loops]
+        for (int j = 0; j < 1280; ++j) {
+        ^~~
+        VITIS_LOOP_45_2: 
+F:\metro-nn-pl\hls\gru_sequence\mgr1_gru_prj\sol1\.autopilot\db\gru_top.pp.0.cpp:2035:9: note: FIX-IT applied suggested code changes
+F:\metro-nn-pl\hls\gru_sequence\mgr1_gru_prj\sol1\.autopilot\db\gru_top.pp.0.cpp:2042:5: warning: Added loop label VITIS_LOOP_52_3:   [xilinx-label-all-loops]
+    for (int i = 0; i < 3 * h_size; ++i) {
+    ^~~
+    VITIS_LOOP_52_3: 
+F:\metro-nn-pl\hls\gru_sequence\mgr1_gru_prj\sol1\.autopilot\db\gru_top.pp.0.cpp:2042:5: note: FIX-IT applied suggested code changes
+F:\metro-nn-pl\hls\gru_sequence\mgr1_gru_prj\sol1\.autopilot\db\gru_top.pp.0.cpp:2044:9: warning: Added loop label VITIS_LOOP_54_4:   [xilinx-label-all-loops]
+        for (int j = 0; j < h_size; ++j) {
+        ^~~
+        VITIS_LOOP_54_4: 
+F:\metro-nn-pl\hls\gru_sequence\mgr1_gru_prj\sol1\.autopilot\db\gru_top.pp.0.cpp:2044:9: note: FIX-IT applied suggested code changes
+F:\metro-nn-pl\hls\gru_sequence\mgr1_gru_prj\sol1\.autopilot\db\gru_top.pp.0.cpp:2051:5: warning: Added loop label VITIS_LOOP_61_5:   [xilinx-label-all-loops]
+    for (int i = 0; i < h_size; ++i) {
+    ^~~
+    VITIS_LOOP_61_5: 
+F:\metro-nn-pl\hls\gru_sequence\mgr1_gru_prj\sol1\.autopilot\db\gru_top.pp.0.cpp:2051:5: note: FIX-IT applied suggested code changes
+F:\metro-nn-pl\hls\gru_sequence\mgr1_gru_prj\sol1\.autopilot\db\gru_top.pp.0.cpp:2066:5: warning: Added loop label VITIS_LOOP_76_6:   [xilinx-label-all-loops]
+    for (int i = 0; i < h_size; ++i) {
+    ^~~
+    VITIS_LOOP_76_6: 
+F:\metro-nn-pl\hls\gru_sequence\mgr1_gru_prj\sol1\.autopilot\db\gru_top.pp.0.cpp:2066:5: note: FIX-IT applied suggested code changes
+F:\metro-nn-pl\hls\gru_sequence\mgr1_gru_prj\sol1\.autopilot\db\gru_top.pp.0.cpp:2081:5: warning: Added loop label VITIS_LOOP_91_1:   [xilinx-label-all-loops]
+    for (int i = 0; i < h_size; ++i) {
+    ^~~
+    VITIS_LOOP_91_1: 
+F:\metro-nn-pl\hls\gru_sequence\mgr1_gru_prj\sol1\.autopilot\db\gru_top.pp.0.cpp:2081:5: note: FIX-IT applied suggested code changes

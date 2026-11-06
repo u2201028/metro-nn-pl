@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "description": "Versioned split manifest for the MGR1 dataset. Groups (original videos, related clips, cameras) never span split sides.",
+  "required": ["schema_version", "clips", "groups", "strata", "splits"],
+  "properties": {
+    "schema_version": {"type": "integer", "const": 1},
+    "clips": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["clip_id", "camera", "source", "scene", "time_span_s", "fps", "label", "rights", "group", "sha256"],
+        "properties": {
+          "clip_id": {"type": "string"},
+          "camera": {"type": "string"},
+          "source": {"type": "string"},
+          "scene": {"type": "string"},
+          "time_span_s": {"type": "array", "items": {"type": "number"}, "minItems": 2, "maxItems": 2},
+          "fps": {"type": "number", "exclusiveMinimum": 0},
+          "label": {"type": "string", "enum": ["fight", "normal"]},
+          "rights": {"type": "string"},
+          "group": {"type": "string"},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "groups": {
+      "type": "object",
+      "description": "group key -> clip_ids; a group never spans split sides",
+      "additionalProperties": {"type": "array", "items": {"type": "string"}}
+    },
+    "strata": {
+      "type": "object",
+      "description": "stratum key -> clip_ids; uncertain provenance stays here",
+      "additionalProperties": {"type": "array", "items": {"type": "string"}}
+    },
+    "splits": {
+      "type": "object",
+      "required": ["train", "val", "test"],
+      "properties": {
+        "train": {"type": "array", "items": {"type": "string"}},
+        "val": {"type": "array", "items": {"type": "string"}},
+        "test": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}

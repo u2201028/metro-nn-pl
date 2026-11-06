@@ -17,6 +17,8 @@ stays PENDING.
 - [ ] CSR map ↔ generated artifacts ↔ RTL decode consistency — schema ↔ generated
 - [ ] Packet worksheet beat counts (9,408 / 9,410 / 82 / 3 / 4) — C simulation
 - [ ] Cycle models reproduce the Section 7 occupancy trace — calculated
+- [ ] Activation LUT ROM header regenerated from the oracle and passing boundary witnesses (`tools/gen_lut_header.py`, `tests/test_lut_header.py`) — calculated
+- [ ] RTL testbenches (skid buffer, packet ingress, CSR block, GRU sequencer) pass under XSim (`vivado/run_xsim.sh`) — RTL simulation
 
 ## Packaging
 

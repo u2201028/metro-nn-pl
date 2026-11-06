@@ -72,6 +72,9 @@ HLS C++ testbench and by the RTL scoreboard.
 | CSR map ↔ RTL decode consistency | `tests/test_csr.py` | DONE (schema ↔ generated) |
 | Packet worksheet beat counts | `tests/test_packet_abi.py` | DONE (C sim) |
 | Cycle models vs Section 7 trace | `tests/test_cycle_models.py` | DONE (calculated) |
+| Activation LUT ROM == oracle tables | `tools/gen_lut_header.py`, `tests/test_lut_header.py` | DONE (calculated, C sim) |
+| RTL testbenches (skid / ingress / CSR / sequencer) | `rtl/tb/`, `vivado/run_xsim.sh` | PENDING (XSim; authored, elaboration-checked) |
+| Shell skeleton (CSR + ingress + skid fabric, IP stub) | `rtl/shell/mgr1_shell.sv`, `vivado/shell.tcl` | PENDING (Vivado; elaboration-checked) |
 | HLS csim/cosim/export | `hls/*/build.tcl` | PENDING (Vitis HLS) |
 | Routed timing on K26 | `vivado/` | PENDING (Vivado) |
 | DMA loopback on KV260 | `vivado/` runbook | PENDING (board) |

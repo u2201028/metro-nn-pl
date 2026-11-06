@@ -35,12 +35,21 @@ level reached in this sandbox, and what remains PENDING.  Evidence levels:
   against golden vectors, packet ABI codec, model container
   pack/validate/corrupt/truncate, cached vs dense replay, gate-order
   witness, sentinel list, CSR generators, worksheet, event metrics,
-  sampler, cycle models.
+  sampler, cycle models; re-verified after the Round-2 kernel edits
+  (activation LUT ROM header, static-capacity GRU buffers, PIPELINE
+  pragmas) - 59 pytest checks green.
 - **Calculated here:** memory/device/traffic/budget worksheets, device
-  budget, MAC accounting, beat counts, Poisson bound, split manifests.
-- **PENDING (toolchain/board):** Vitis HLS csim/csynth/cosim/export, Vivado
-  synthesis and routed timing, DMA loopback, board bring-up, live capture,
-  training on real footage.
+  budget, MAC accounting, beat counts, Poisson bound, split manifests,
+  activation LUT ROM consistency (`tests/test_lut_header.py`).
+- **Authored, elaboration-checked here (XSim on the toolchain host):**
+  the four RTL testbenches in `rtl/tb/` (skid buffer, packet ingress, CSR
+  block, GRU sequencer), the shell top `rtl/shell/mgr1_shell.sv` with the
+  Phase-8A IP stub, `vivado/shell.tcl` and the XSim runner
+  `vivado/run_xsim.sh`.  They parse and elaborate under pyslang
+  (`tools/check_rtl.py`, 10 files); execution is Vivado-gated.
+- **PENDING (toolchain/board):** XSim testbench execution, Vitis HLS
+  csim/csynth/cosim/export, Vivado synthesis and routed timing, DMA
+  loopback, board bring-up, live capture, training on real footage.
 
 ## Run ledger
 
@@ -50,8 +59,9 @@ tool versions, evidence level, run ID.
 ## How to reproduce
 
 ```bash
-python3 -m pytest tests/ -q          # all 51 checks
+python3 -m pytest tests/ -q          # all 59 checks
 python3 tools/gen_csr.py             # regenerate CSR artifacts
+python3 tools/gen_lut_header.py      # regenerate activation LUT ROM header
 python3 tools/gen_docs.py            # regenerate contract + worksheet docs
 cd hls/gru_sequence && g++ -std=c++17 -O2 -I../common \
     tb_gru.cpp gru_top.cpp ../common/activation_luts.cpp -o tb_gru \
@@ -59,5 +69,13 @@ cd hls/gru_sequence && g++ -std=c++17 -O2 -I../common \
 cd hls/mnv2_features && g++ -std=c++17 -O2 -I../common \
     tb_conv.cpp ../common/activation_luts.cpp -o tb_conv \
  && ./tb_conv ../../vectors/golden/conv_sentinels.vec
-python3 tools/check_rtl.py           # pyslang elaboration check
+python3 tools/check_rtl.py           # pyslang elaboration check (RTL + TBs)
+
+vivado/run_xsim.sh                   # XSim testbenches - Vivado host only
+vivado -mode batch -source vivado/shell.tcl -tclargs xck26-sfvc784-2LV-c
 ```
+
+This host has no AMD toolchain; the Vivado/Vitis lines run on the
+toolchain host (see results/run_ledger.csv R021).  The C-sim testbenches
+also build with any C++17 toolchain: the Round-2 sandbox runs used
+`zig c++ 0.17.1` where `g++` was unavailable.

@@ -3,6 +3,9 @@ __pycache__/
 hls/*/tb_gru
 hls/*/tb_conv
 hls/*/*.o
+hls/*/*.exe
+hls/*/*.pdb
+hls/*/failure.txt
 vivado/*/
 vivado/*.jou
 vivado/*.log

@@ -1,0 +1,39 @@
+{
+    "1": {
+        "name": "conv2d_int8_Pipeline_VITIS_LOOP_36_4_VITIS_LOOP_37_5_VITIS_LOOP_38_6",
+        "file": "conv_kernels.cpp",
+        "fileloc": "35",
+        "instructions": "83",
+        "total_instructions": "83",
+        "calls": "",
+        "basicblocks": "4",
+        "loads": {
+            "L": "6"
+        },
+        "stores": {
+            "L": "10"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "0": {
+        "name": "conv2d_int8",
+        "file": "conv_kernels.cpp",
+        "fileloc": "23",
+        "instructions": "158",
+        "total_instructions": "241",
+        "calls": "1",
+        "basicblocks": "16",
+        "loads": {
+            "L": "2"
+        },
+        "stores": {
+            "L": "2"
+        },
+        "loops": {
+            "L": "1",
+            "N": "2"
+        }
+    }
+}

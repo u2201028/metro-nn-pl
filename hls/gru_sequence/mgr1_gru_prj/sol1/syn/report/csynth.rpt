@@ -1,0 +1,278 @@
+
+
+================================================================
+== Synthesis Summary Report of 'gru_step'
+================================================================
++ General Information: 
+    * Date:           Fri Nov  6 16:35:56 2026
+    * Version:        2024.2 (Build 5238294 on Nov  8 2024)
+    * Project:        mgr1_gru_prj
+    * Solution:       sol1 (Vivado IP Flow Target)
+    * Product family: zynquplus
+    * Target device:  xck26-sfvc784-2LV-c
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +--------------------------------------+------+------+---------+-----------+----------+---------+------+----------+-----------+---------+-------------+-------------+-----+
+    |                Modules               | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |           |         |             |             |     |
+    |                & Loops               | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|   BRAM    |   DSP   |      FF     |     LUT     | URAM|
+    +--------------------------------------+------+------+---------+-----------+----------+---------+------+----------+-----------+---------+-------------+-------------+-----+
+    |+ gru_step                            |     -|  0.01|        -|          -|         -|        -|     -|        no|  122 (42%)|  31 (2%)|  35740 (15%)|  23913 (20%)|    -|
+    | + gru_step_Outline_VITIS_LOOP_43_1   |     -|  2.63|        -|          -|         -|        -|     -|        no|          -|        -|     11 (~0%)|     77 (~0%)|    -|
+    |  o VITIS_LOOP_43_1                   |     -|  4.87|        -|          -|         1|        -|     -|        no|          -|        -|            -|            -|    -|
+    | + gru_step_Outline_VITIS_LOOP_52_3   |     -|  2.63|      512|  3.415e+03|         -|      512|     -|        no|          -|        -|     11 (~0%)|     77 (~0%)|    -|
+    |  o VITIS_LOOP_52_3                   |     -|  4.87|      511|  3.408e+03|         1|        -|   511|        no|          -|        -|            -|            -|    -|
+    | + gru_step_Pipeline_VITIS_LOOP_61_5  |     -|  0.98|        -|          -|         -|        -|     -|        no|  116 (40%)|  8 (~0%)|  27227 (11%)|  16185 (13%)|    -|
+    |  o VITIS_LOOP_61_5                   |     -|  4.87|        -|          -|        73|        1|     -|       yes|          -|        -|            -|            -|    -|
+    | + gru_step_Pipeline_VITIS_LOOP_76_6  |     -|  0.01|      309|  2.061e+03|         -|      309|     -|        no|          -|  16 (1%)|    7969 (3%)|    6789 (5%)|    -|
+    |  o VITIS_LOOP_76_6                   |     -|  4.87|      307|  2.048e+03|        54|        1|   255|       yes|          -|        -|            -|            -|    -|
+    +--------------------------------------+------+------+---------+-----------+----------+---------+------+----------+-----------+---------+-------------+-------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* Other Ports
++----------+---------+-----------+----------+
+| Port     | Mode    | Direction | Bitwidth |
++----------+---------+-----------+----------+
+| b_hh     | ap_none | in        | 32       |
+| b_ih     | ap_none | in        | 32       |
+| h_out    | ap_vld  | out       | 32       |
+| h_prev   | ap_none | in        | 32       |
+| h_size   | ap_none | in        | 32       |
+| mult_gh  | ap_none | in        | 32       |
+| mult_gx  | ap_none | in        | 32       |
+| shift_gh | ap_none | in        | 32       |
+| shift_gx | ap_none | in        | 32       |
+| w_hh     | ap_none | in        | 8        |
+| w_ih     | ap_none | in        | 8        |
+| x        | ap_none | in        | 32       |
++----------+---------+-----------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst    | reset      | ap_rst                            |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+---------------------+
+| Argument | Direction | Datatype            |
++----------+-----------+---------------------+
+| x        | in        | int const *         |
+| h_prev   | in        | int const *         |
+| w_ih     | in        | signed char const * |
+| w_hh     | in        | signed char const * |
+| b_ih     | in        | int const *         |
+| b_hh     | in        | int const *         |
+| mult_gx  | in        | int                 |
+| shift_gx | in        | int                 |
+| mult_gh  | in        | int                 |
+| shift_gh | in        | int                 |
+| h_out    | out       | int*                |
+| h_size   | in        | int                 |
++----------+-----------+---------------------+
+
+* SW-to-HW Mapping
++----------+--------------+---------+
+| Argument | HW Interface | HW Type |
++----------+--------------+---------+
+| x        | x            | port    |
+| h_prev   | h_prev       | port    |
+| w_ih     | w_ih         | port    |
+| w_hh     | w_hh         | port    |
+| b_ih     | b_ih         | port    |
+| b_hh     | b_hh         | port    |
+| mult_gx  | mult_gx      | port    |
+| shift_gx | shift_gx     | port    |
+| mult_gh  | mult_gh      | port    |
+| shift_gh | shift_gh     | port    |
+| h_out    | h_out        | port    |
+| h_out    | h_out_ap_vld | port    |
+| h_size   | h_size       | port    |
++----------+--------------+---------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++--------------------------------------+-----+--------+---------------+--------+-----------+---------+
+| Name                                 | DSP | Pragma | Variable      | Op     | Impl      | Latency |
++--------------------------------------+-----+--------+---------------+--------+-----------+---------+
+| + gru_step                           | 31  |        |               |        |           |         |
+|   mul_fu_234_p2                      |     |        | mul           | sub    | fabric    | 0       |
+|   icmp_ln43_fu_240_p2                |     |        | icmp_ln43     | setgt  | auto      | 0       |
+|   add_ln43_1_fu_272_p2               |     |        | add_ln43_1    | add    | fabric    | 0       |
+|   mul_19s_32s_32_1_1_U44             | 2   |        | mul_ln43      | mul    | auto      | 0       |
+|   add_ln43_fu_299_p2                 |     |        | add_ln43      | add    | fabric    | 0       |
+|   grp_fu_219_p2                      |     |        | empty_27      | setgt  | auto      | 0       |
+|   select_ln58_fu_278_p3              |     |        | select_ln58   | select | auto_sel  | 0       |
+|   mul_31ns_8s_32_1_1_U45             | 2   |        | mul_ln58      | mul    | auto      | 0       |
+|   mul_32s_32s_32_1_1_U46             | 3   |        | mul_ln58_1    | mul    | auto      | 0       |
+|   add_ln58_fu_306_p2                 |     |        | add_ln58      | add    | fabric    | 0       |
+|   grp_fu_219_p2                      |     |        | icmp_ln61     | setgt  | auto      | 0       |
+|   den_assign_fu_330_p2               |     |        | den_assign    | shl    | auto_pipe | 0       |
+|   sub_i_i_fu_336_p2                  |     |        | sub_i_i       | sub    | fabric    | 0       |
+|  + gru_step_Outline_VITIS_LOOP_43_1  | 0   |        |               |        |           |         |
+|    icmp_ln43_fu_69_p2                |     |        | icmp_ln43     | seteq  | auto      | 0       |
+|    add_ln43_1_fu_74_p2               |     |        | add_ln43_1    | add    | fabric    | 0       |
+|  + gru_step_Outline_VITIS_LOOP_52_3  | 0   |        |               |        |           |         |
+|    icmp_ln52_fu_69_p2                |     |        | icmp_ln52     | seteq  | auto      | 0       |
+|    add_ln52_fu_74_p2                 |     |        | add_ln52      | add    | fabric    | 0       |
+|  + gru_step_Pipeline_VITIS_LOOP_61_5 | 8   |        |               |        |           |         |
+|    cmp_i_fu_278_p2                   |     |        | cmp_i         | setgt  | auto      | 0       |
+|    icmp_ln61_fu_296_p2               |     |        | icmp_ln61     | seteq  | auto      | 0       |
+|    add_ln61_fu_302_p2                |     |        | add_ln61      | add    | fabric    | 0       |
+|    add_ln65_fu_312_p2                |     |        | add_ln65      | add    | fabric    | 0       |
+|    add_ln65_1_fu_349_p2              |     |        | add_ln65_1    | add    | fabric    | 0       |
+|    mul_33s_32s_64_1_1_U7             | 4   |        | product       | mul    | auto      | 0       |
+|    add_ln67_fu_324_p2                |     |        | add_ln67      | add    | fabric    | 0       |
+|    add_ln67_1_fu_363_p2              |     |        | add_ln67_1    | add    | fabric    | 0       |
+|    mul_33s_32s_64_1_1_U8             | 4   |        | product_1     | mul    | auto      | 0       |
+|    sub_ln49_fu_385_p2                |     |        | sub_ln49      | sub    | fabric    | 0       |
+|    lshr_ln49_fu_390_p2               |     |        | lshr_ln49     | lshr   | auto_pipe | 0       |
+|    sub_ln49_1_fu_412_p2              |     |        | sub_ln49_1    | sub    | fabric    | 0       |
+|    lshr_ln49_1_fu_417_p2             |     |        | lshr_ln49_1   | lshr   | auto_pipe | 0       |
+|    q_fu_421_p3                       |     |        | q             | select | auto_sel  | 0       |
+|    srem_64ns_64ns_64_68_1_U9         |     |        | r             | srem   | auto      | 67      |
+|    icmp_ln52_1_fu_439_p2             |     |        | icmp_ln52_1   | setgt  | auto      | 0       |
+|    icmp_ln52_3_fu_444_p2             |     |        | icmp_ln52_3   | seteq  | auto      | 0       |
+|    and_ln52_fu_449_p2                |     |        | and_ln52      | and    | auto      | 0       |
+|    q_9_fu_455_p2                     |     |        | q_9           | add    | fabric    | 0       |
+|    icmp_ln53_1_fu_461_p2             |     |        | icmp_ln53_1   | setlt  | auto      | 0       |
+|    icmp_ln53_2_fu_466_p2             |     |        | icmp_ln53_2   | seteq  | auto      | 0       |
+|    and_ln53_fu_471_p2                |     |        | and_ln53      | and    | auto      | 0       |
+|    or_ln53_fu_477_p2                 |     |        | or_ln53       | or     | auto      | 0       |
+|    add_ln53_1_fu_483_p2              |     |        | add_ln53_1    | add    | fabric    | 0       |
+|    select_ln53_1_fu_489_p3           |     |        | select_ln53_1 | select | auto_sel  | 0       |
+|    or_ln52_fu_497_p2                 |     |        | or_ln52       | or     | auto      | 0       |
+|    cond_i_ph_fu_503_p3               |     |        | cond_i_ph     | select | auto_sel  | 0       |
+|    sub_ln49_2_fu_395_p2              |     |        | sub_ln49_2    | sub    | fabric    | 0       |
+|    lshr_ln49_2_fu_400_p2             |     |        | lshr_ln49_2   | lshr   | auto_pipe | 0       |
+|    sub_ln49_3_fu_518_p2              |     |        | sub_ln49_3    | sub    | fabric    | 0       |
+|    lshr_ln49_3_fu_523_p2             |     |        | lshr_ln49_3   | lshr   | auto_pipe | 0       |
+|    q_11_fu_527_p3                    |     |        | q_11          | select | auto_sel  | 0       |
+|    srem_64ns_64ns_64_68_1_U10        |     |        | r_2           | srem   | auto      | 67      |
+|    icmp_ln52_fu_545_p2               |     |        | icmp_ln52     | setgt  | auto      | 0       |
+|    icmp_ln52_4_fu_550_p2             |     |        | icmp_ln52_4   | seteq  | auto      | 0       |
+|    and_ln52_1_fu_555_p2              |     |        | and_ln52_1    | and    | auto      | 0       |
+|    or_ln52_1_fu_561_p2               |     |        | or_ln52_1     | or     | auto      | 0       |
+|    icmp_ln53_fu_567_p2               |     |        | icmp_ln53     | setlt  | auto      | 0       |
+|    icmp_ln53_4_fu_572_p2             |     |        | icmp_ln53_4   | seteq  | auto      | 0       |
+|    and_ln53_1_fu_577_p2              |     |        | and_ln53_1    | and    | auto      | 0       |
+|    or_ln53_1_fu_583_p2               |     |        | or_ln53_1     | or     | auto      | 0       |
+|    add_ln53_fu_589_p2                |     |        | add_ln53      | add    | fabric    | 0       |
+|    select_ln53_fu_595_p3             |     |        | select_ln53   | select | auto_sel  | 0       |
+|    q_12_fu_603_p2                    |     |        | q_12          | add    | fabric    | 0       |
+|    icmp_ln58_fu_609_p2               |     |        | icmp_ln58     | setlt  | auto      | 0       |
+|    icmp_ln59_fu_625_p2               |     |        | icmp_ln59     | setgt  | auto      | 0       |
+|    select_ln58_1_fu_635_p3           |     |        | select_ln58_1 | select | auto_sel  | 0       |
+|    or_ln58_fu_643_p2                 |     |        | or_ln58       | or     | auto      | 0       |
+|    select_ln58_fu_649_p3             |     |        | select_ln58   | select | auto_sel  | 0       |
+|    icmp_ln58_1_fu_657_p2             |     |        | icmp_ln58_1   | setlt  | auto      | 0       |
+|    icmp_ln59_1_fu_673_p2             |     |        | icmp_ln59_1   | setgt  | auto      | 0       |
+|    select_ln58_2_fu_683_p3           |     |        | select_ln58_2 | select | auto_sel  | 0       |
+|    or_ln58_1_fu_691_p2               |     |        | or_ln58_1     | or     | auto      | 0       |
+|    ni_fu_697_p3                      |     |        | ni            | select | auto_sel  | 0       |
+|    xor_ln20_fu_713_p2                |     |        | xor_ln20      | xor    | auto      | 0       |
+|    xor_ln24_fu_744_p2                |     |        | xor_ln24      | xor    | auto      | 0       |
+|  + gru_step_Pipeline_VITIS_LOOP_76_6 | 16  |        |               |        |           |         |
+|    icmp_ln76_fu_221_p2               |     |        | icmp_ln76     | seteq  | auto      | 0       |
+|    add_ln76_fu_227_p2                |     |        | add_ln76      | add    | fabric    | 0       |
+|    mul_15ns_32s_47_1_1_U27           | 2   |        | zh            | mul    | auto      | 0       |
+|    mul_47s_49ns_95_1_1_U29           | 9   |        | mul_ln49      | mul    | auto      | 0       |
+|    sub_ln49_fu_275_p2                |     |        | sub_ln49      | sub    | fabric    | 0       |
+|    select_ln49_fu_290_p3             |     |        | select_ln49   | select | auto_sel  | 0       |
+|    sub_ln49_1_fu_368_p2              |     |        | sub_ln49_1    | sub    | fabric    | 0       |
+|    select_ln49_1_fu_374_p3           |     |        | select_ln49_1 | select | auto_sel  | 0       |
+|    srem_47s_16ns_47_51_1_U30         |     |        | r             | srem   | auto      | 50      |
+|    icmp_ln52_fu_403_p2               |     |        | icmp_ln52     | seteq  | auto      | 0       |
+|    q_fu_409_p2                       |     |        | q             | add    | fabric    | 0       |
+|    icmp_ln53_fu_414_p2               |     |        | icmp_ln53     | setlt  | auto      | 0       |
+|    add_ln53_fu_420_p2                |     |        | add_ln53      | add    | fabric    | 0       |
+|    select_ln53_fu_425_p3             |     |        | select_ln53   | select | auto_sel  | 0       |
+|    q_7_fu_432_p3                     |     |        | q_7           | select | auto_sel  | 0       |
+|    xor_ln80_fu_296_p2                |     |        | xor_ln80      | xor    | auto      | 0       |
+|    mul_16s_15ns_31_1_1_U31           | 1   |        | keep          | mul    | auto      | 0       |
+|    mul_31s_33ns_63_1_1_U28           | 4   |        | mul_ln49_1    | mul    | auto      | 0       |
+|    sub_ln49_2_fu_327_p2              |     |        | sub_ln49_2    | sub    | fabric    | 0       |
+|    select_ln49_2_fu_353_p3           |     |        | select_ln49_2 | select | auto_sel  | 0       |
+|    sub_ln49_3_fu_443_p2              |     |        | sub_ln49_3    | sub    | fabric    | 0       |
+|    select_ln49_3_fu_449_p3           |     |        | select_ln49_3 | select | auto_sel  | 0       |
+|    srem_31s_16ns_31_35_1_U32         |     |        | r_1           | srem   | auto      | 34      |
+|    icmp_ln52_1_fu_478_p2             |     |        | icmp_ln52_1   | seteq  | auto      | 0       |
+|    q_2_fu_484_p2                     |     |        | q_2           | add    | fabric    | 0       |
+|    icmp_ln53_1_fu_490_p2             |     |        | icmp_ln53_1   | setlt  | auto      | 0       |
+|    add_ln53_1_fu_496_p2              |     |        | add_ln53_1    | add    | fabric    | 0       |
+|    select_ln53_1_fu_502_p3           |     |        | select_ln53_1 | select | auto_sel  | 0       |
+|    q_8_fu_510_p3                     |     |        | q_8           | select | auto_sel  | 0       |
+|    hv_fu_522_p2                      |     |        | hv            | add    | fabric    | 0       |
+|    sub_ln49_4_fu_540_p2              |     |        | sub_ln49_4    | sub    | fabric    | 0       |
+|    sub_ln49_5_fu_570_p2              |     |        | sub_ln49_5    | sub    | fabric    | 0       |
+|    q_4_fu_575_p3                     |     |        | q_4           | select | auto_sel  | 0       |
+|    sub_ln50_fu_589_p2                |     |        | sub_ln50      | sub    | fabric    | 0       |
+|    sub_ln52_fu_598_p2                |     |        | sub_ln52      | sub    | fabric    | 0       |
+|    select_ln50_fu_607_p3             |     |        | select_ln50   | select | auto_sel  | 0       |
+|    icmp_ln52_2_fu_614_p2             |     |        | icmp_ln52_2   | setgt  | auto      | 0       |
+|    icmp_ln52_3_fu_620_p2             |     |        | icmp_ln52_3   | seteq  | auto      | 0       |
+|    and_ln52_fu_626_p2                |     |        | and_ln52      | and    | auto      | 0       |
+|    q_5_fu_632_p2                     |     |        | q_5           | add    | fabric    | 0       |
+|    icmp_ln53_2_fu_638_p2             |     |        | icmp_ln53_2   | setlt  | auto      | 0       |
+|    icmp_ln53_3_fu_644_p2             |     |        | icmp_ln53_3   | seteq  | auto      | 0       |
+|    and_ln53_fu_650_p2                |     |        | and_ln53      | and    | auto      | 0       |
+|    or_ln53_fu_656_p2                 |     |        | or_ln53       | or     | auto      | 0       |
+|    add_ln53_2_fu_662_p2              |     |        | add_ln53_2    | add    | fabric    | 0       |
+|    select_ln53_2_fu_668_p3           |     |        | select_ln53_2 | select | auto_sel  | 0       |
+|    or_ln52_fu_676_p2                 |     |        | or_ln52       | or     | auto      | 0       |
+|    q_6_fu_682_p3                     |     |        | q_6           | select | auto_sel  | 0       |
+|    icmp_ln58_fu_690_p2               |     |        | icmp_ln58     | setlt  | auto      | 0       |
+|    icmp_ln59_fu_706_p2               |     |        | icmp_ln59     | setgt  | auto      | 0       |
+|    select_ln58_fu_716_p3             |     |        | select_ln58   | select | auto_sel  | 0       |
+|    or_ln58_fu_724_p2                 |     |        | or_ln58       | or     | auto      | 0       |
+|    committed_fu_730_p3               |     |        | committed     | select | auto_sel  | 0       |
++--------------------------------------+-----+--------+---------------+--------+-----------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++--------------------------------------+--------------+------+------+------+--------+------------------+------+---------+------------------+
+| Name                                 | Usage        | Type | BRAM | URAM | Pragma | Variable         | Impl | Latency | Bitwidth, Depth, |
+|                                      |              |      |      |      |        |                  |      |         | Banks            |
++--------------------------------------+--------------+------+------+------+--------+------------------+------+---------+------------------+
+| + gru_step                           |              |      | 122  | 0    |        |                  |      |         |                  |
+|   a_ar_U                             | ram_2p array |      | 2    |      |        | a_ar             | auto | 1       | 32, 384, 1       |
+|   u_ar_U                             | ram_2p array |      | 2    |      |        | u_ar             | auto | 1       | 32, 384, 1       |
+|   z_U                                | ram_1p array |      | 1    |      |        | z                | auto | 1       | 15, 128, 1       |
+|   n_U                                | ram_1p array |      | 1    |      |        | n                | auto | 1       | 16, 128, 1       |
+|  + gru_step_Pipeline_VITIS_LOOP_61_5 |              |      | 116  | 0    |        |                  |      |         |                  |
+|    MGR1_SIGMOID_LUT_U                | rom_1p       |      | 56   |      |        | MGR1_SIGMOID_LUT | auto | 1       | 15, 65536, 1     |
+|    MGR1_TANH_LUT_U                   | rom_1p       |      | 60   |      |        | MGR1_TANH_LUT    | auto | 1       | 16, 65536, 1     |
++--------------------------------------+--------------+------+------+------+--------+------------------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++----------+---------+-----------------------------+
+| Type     | Options | Location                    |
++----------+---------+-----------------------------+
+| pipeline | II = 1  | gru_top.cpp:46 in gru_step  |
+| pipeline | II = 1  | gru_top.cpp:55 in gru_step  |
+| pipeline | II = 1  | gru_top.cpp:62 in gru_step  |
+| pipeline | II = 1  | gru_top.cpp:77 in gru_step  |
+| pipeline | II = 1  | gru_top.cpp:92 in gru_score |
++----------+---------+-----------------------------+
+
+

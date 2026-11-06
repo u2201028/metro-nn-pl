@@ -6,7 +6,7 @@
 
 #include "mgr1_types.h"
 
-#include "conv_kernels.cpp"
+#include "conv_kernels.hpp"
 
 #include <cstdint>
 #include <fstream>

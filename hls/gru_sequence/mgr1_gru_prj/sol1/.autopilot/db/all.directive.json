@@ -1,0 +1,23 @@
+[
+  {
+    "functionLabel": "",
+    "functionName": "gru_step",
+    "id": 0,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "TOP",
+      "option": [
+        {
+          "name": "name",
+          "value": "gru_step"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "F:/metro-nn-pl/hls/gru_sequence/export_only.tcl",
+    "sourceLine": 10,
+    "success": true
+  }
+]

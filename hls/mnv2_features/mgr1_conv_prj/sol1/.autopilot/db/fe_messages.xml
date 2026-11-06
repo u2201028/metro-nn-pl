@@ -1,0 +1,24 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="F:/metro-nn-pl/hls/mnv2_features/export_only.tcl:10:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="conv2d_int8" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=conv2d_int8" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="conv_kernels.cpp:39:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="conv2d_int8" ARG_PragmaIsValid="1" ARG_PragmaOptions="II = 1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="conv_kernels.cpp:71:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="depthwise_conv2d_int8" ARG_PragmaIsValid="1" ARG_PragmaOptions="II = 1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="../common\mgr1_types.h:67:0" msg_body="Inlining function 'mgr1::round_half_even(long long, long long)' into 'mgr1::requantize(long long, int, int, int, int, int)'">
+        <args Callee="mgr1::round_half_even(long long, long long)" Callee-DebugLoc="File {../common\mgr1_types.h} Line 48 Column 0" Caller="mgr1::requantize(long long, int, int, int, int, int)" Caller-DebugLoc="File {../common\mgr1_types.h} Line 67 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="../common\mgr1_types.h:67:0" msg_body="Inlining function 'mgr1::sat(int, int, long long)' into 'mgr1::requantize(long long, int, int, int, int, int)'">
+        <args Callee="mgr1::sat(int, int, long long)" Callee-DebugLoc="File {../common\mgr1_types.h} Line 57 Column 0" Caller="mgr1::requantize(long long, int, int, int, int, int)" Caller-DebugLoc="File {../common\mgr1_types.h} Line 67 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="conv_kernels.cpp:29:0" msg_body="Inlining function 'mgr1::requantize(long long, int, int, int, int, int)' into 'mgr1::conv2d_int8(signed char const*, signed char const*, int const*, int, int const*, int const*, int, int, int, int, int, int, int, int, int, signed char*)'">
+        <args Callee="mgr1::requantize(long long, int, int, int, int, int)" Callee-DebugLoc="File {../common\mgr1_types.h} Line 67 Column 0" Caller="mgr1::conv2d_int8(signed char const*, signed char const*, int const*, int, int const*, int const*, int, int, int, int, int, int, int, int, int, signed char*)" Caller-DebugLoc="File conv_kernels.cpp Line 29 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-450" msg_severity="WARNING" msg_loc="conv_kernels.cpp:43:62" msg_body="Ignore address on register port 'x'"/>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-450" msg_severity="WARNING" msg_loc="conv_kernels.cpp:44:40" msg_body="Ignore address on register port 'w'"/>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-450" msg_severity="WARNING" msg_loc="conv_kernels.cpp:49:53" msg_body="Ignore address on register port 'out'"/>
+</xilinx:hls_fe_msgs>
+

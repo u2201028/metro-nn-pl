@@ -1,0 +1,103 @@
+---
+MainSourceFile:  'F:/metro-nn-pl/hls/mnv2_features/mgr1_conv_prj/sol1/.autopilot/db/conv_kernels.pp.0.cpp'
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_32_1:  '
+    FileOffset:      32
+    FilePath:        conv_kernels.cpp
+    Replacements:    
+      - FilePath:        'F:\metro-nn-pl\hls\mnv2_features\mgr1_conv_prj\sol1\.autopilot\db\conv_kernels.pp.0.cpp'
+        Offset:          63441
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_32_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_33_2:  '
+    FileOffset:      33
+    FilePath:        conv_kernels.cpp
+    Replacements:    
+      - FilePath:        'F:\metro-nn-pl\hls\mnv2_features\mgr1_conv_prj\sol1\.autopilot\db\conv_kernels.pp.0.cpp'
+        Offset:          63485
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_33_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_34_3:  '
+    FileOffset:      34
+    FilePath:        conv_kernels.cpp
+    Replacements:    
+      - FilePath:        'F:\metro-nn-pl\hls\mnv2_features\mgr1_conv_prj\sol1\.autopilot\db\conv_kernels.pp.0.cpp'
+        Offset:          63533
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_34_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_36_4:  '
+    FileOffset:      36
+    FilePath:        conv_kernels.cpp
+    Replacements:    
+      - FilePath:        'F:\metro-nn-pl\hls\mnv2_features\mgr1_conv_prj\sol1\.autopilot\db\conv_kernels.pp.0.cpp'
+        Offset:          63622
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_36_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_37_5:  '
+    FileOffset:      37
+    FilePath:        conv_kernels.cpp
+    Replacements:    
+      - FilePath:        'F:\metro-nn-pl\hls\mnv2_features\mgr1_conv_prj\sol1\.autopilot\db\conv_kernels.pp.0.cpp'
+        Offset:          63677
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_37_5: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_38_6:  '
+    FileOffset:      38
+    FilePath:        conv_kernels.cpp
+    Replacements:    
+      - FilePath:        'F:\metro-nn-pl\hls\mnv2_features\mgr1_conv_prj\sol1\.autopilot\db\conv_kernels.pp.0.cpp'
+        Offset:          63735
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_38_6: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_65_1:  '
+    FileOffset:      65
+    FilePath:        conv_kernels.cpp
+    Replacements:    
+      - FilePath:        'F:\metro-nn-pl\hls\mnv2_features\mgr1_conv_prj\sol1\.autopilot\db\conv_kernels.pp.0.cpp'
+        Offset:          64926
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_65_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_66_2:  '
+    FileOffset:      66
+    FilePath:        conv_kernels.cpp
+    Replacements:    
+      - FilePath:        'F:\metro-nn-pl\hls\mnv2_features\mgr1_conv_prj\sol1\.autopilot\db\conv_kernels.pp.0.cpp'
+        Offset:          64966
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_66_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_67_3:  '
+    FileOffset:      67
+    FilePath:        conv_kernels.cpp
+    Replacements:    
+      - FilePath:        'F:\metro-nn-pl\hls\mnv2_features\mgr1_conv_prj\sol1\.autopilot\db\conv_kernels.pp.0.cpp'
+        Offset:          65014
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_67_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_69_4:  '
+    FileOffset:      69
+    FilePath:        conv_kernels.cpp
+    Replacements:    
+      - FilePath:        'F:\metro-nn-pl\hls\mnv2_features\mgr1_conv_prj\sol1\.autopilot\db\conv_kernels.pp.0.cpp'
+        Offset:          65102
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_69_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_70_5:  '
+    FileOffset:      70
+    FilePath:        conv_kernels.cpp
+    Replacements:    
+      - FilePath:        'F:\metro-nn-pl\hls\mnv2_features\mgr1_conv_prj\sol1\.autopilot\db\conv_kernels.pp.0.cpp'
+        Offset:          65156
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_70_5: '
+...

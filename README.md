@@ -31,7 +31,7 @@ cd hls/gru_sequence && g++ -std=c++17 -O2 -I../common \
     tb_gru.cpp gru_top.cpp ../common/activation_luts.cpp -o tb_gru \
     && ./tb_gru ../../vectors/golden/gru_window.vec
 cd hls/mnv2_features && g++ -std=c++17 -O2 -I../common \
-    tb_conv.cpp ../common/activation_luts.cpp -o tb_conv \
+    tb_conv.cpp conv_kernels.cpp ../common/activation_luts.cpp -o tb_conv \
     && ./tb_conv ../../vectors/golden/conv_sentinels.vec
 python3 tools/check_rtl.py                      # parse + elaboration (pyslang)
 ```

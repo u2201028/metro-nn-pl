@@ -1,0 +1,547 @@
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: '../common\mgr1_types.h', Line: 69, Column: 37 }
+Function:        _ZN4mgr110requantizeExiiiii
+Args:            
+  - Callee:          'mgr1::round_half_even(long long, long long)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 48, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'mgr1::requantize(long long, int, int, int, int, int)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 67, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: '../common\mgr1_types.h', Line: 71, Column: 12 }
+Function:        _ZN4mgr110requantizeExiiiii
+Args:            
+  - Callee:          'mgr1::sat(int, int, long long)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 57, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'mgr1::requantize(long long, int, int, int, int, int)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 67, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: ../common/activation_luts.cpp, Line: 20, Column: 29 }
+Function:        _ZN4mgr111sigmoid_q15Ei
+Args:            
+  - Callee:          'mgr1::sat(int, int, long long)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 57, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'mgr1::sigmoid_q15(int)'
+    DebugLoc:        { File: ../common/activation_luts.cpp, Line: 19, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: ../common/activation_luts.cpp, Line: 24, Column: 26 }
+Function:        _ZN4mgr18tanh_q15Ei
+Args:            
+  - Callee:          'mgr1::sat(int, int, long long)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 57, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'mgr1::tanh_q15(int)'
+    DebugLoc:        { File: ../common/activation_luts.cpp, Line: 23, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: gru_top.cpp, Line: 65, Column: 18 }
+Function:        _ZN4mgr18gru_stepEPKiS1_PKaS3_S1_S1_iiiiPii
+Args:            
+  - Callee:          'mgr1::requantize(long long, int, int, int, int, int)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 67, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'mgr1::gru_step(int const*, int const*, signed char const*, signed char const*, int const*, int const*, int, int, int, int, int*, int)'
+    DebugLoc:        { File: gru_top.cpp, Line: 35, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: gru_top.cpp, Line: 70, Column: 16 }
+Function:        _ZN4mgr18gru_stepEPKiS1_PKaS3_S1_S1_iiiiPii
+Args:            
+  - Callee:          'mgr1::sigmoid_q15(int)'
+    DebugLoc:        { File: ../common/activation_luts.cpp, Line: 19, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'mgr1::gru_step(int const*, int const*, signed char const*, signed char const*, int const*, int const*, int, int, int, int, int*, int)'
+    DebugLoc:        { File: gru_top.cpp, Line: 35, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: gru_top.cpp, Line: 71, Column: 16 }
+Function:        _ZN4mgr18gru_stepEPKiS1_PKaS3_S1_S1_iiiiPii
+Args:            
+  - Callee:          'mgr1::tanh_q15(int)'
+    DebugLoc:        { File: ../common/activation_luts.cpp, Line: 23, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'mgr1::gru_step(int const*, int const*, signed char const*, signed char const*, int const*, int const*, int, int, int, int, int*, int)'
+    DebugLoc:        { File: gru_top.cpp, Line: 35, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: gru_top.cpp, Line: 79, Column: 24 }
+Function:        _ZN4mgr18gru_stepEPKiS1_PKaS3_S1_S1_iiiiPii
+Args:            
+  - Callee:          'mgr1::round_half_even(long long, long long)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 48, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'mgr1::gru_step(int const*, int const*, signed char const*, signed char const*, int const*, int const*, int, int, int, int, int*, int)'
+    DebugLoc:        { File: gru_top.cpp, Line: 35, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: gru_top.cpp, Line: 83, Column: 25 }
+Function:        _ZN4mgr18gru_stepEPKiS1_PKaS3_S1_S1_iiiiPii
+Args:            
+  - Callee:          'mgr1::sat(int, int, long long)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 57, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'mgr1::gru_step(int const*, int const*, signed char const*, signed char const*, int const*, int const*, int, int, int, int, int*, int)'
+    DebugLoc:        { File: gru_top.cpp, Line: 35, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: '../common\mgr1_types.h', Line: 69, Column: 37 }
+Function:        _ZN4mgr110requantizeExiiiii
+Args:            
+  - Callee:          'mgr1::round_half_even(long long, long long)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 48, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'mgr1::requantize(long long, int, int, int, int, int)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 67, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: '../common\mgr1_types.h', Line: 71, Column: 12 }
+Function:        _ZN4mgr110requantizeExiiiii
+Args:            
+  - Callee:          'mgr1::sat(int, int, long long)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 57, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'mgr1::requantize(long long, int, int, int, int, int)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 67, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: ../common/activation_luts.cpp, Line: 20, Column: 29 }
+Function:        _ZN4mgr111sigmoid_q15Ei
+Args:            
+  - Callee:          'mgr1::sat(int, int, long long)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 57, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'mgr1::sigmoid_q15(int)'
+    DebugLoc:        { File: ../common/activation_luts.cpp, Line: 19, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: ../common/activation_luts.cpp, Line: 24, Column: 26 }
+Function:        _ZN4mgr18tanh_q15Ei
+Args:            
+  - Callee:          'mgr1::sat(int, int, long long)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 57, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'mgr1::tanh_q15(int)'
+    DebugLoc:        { File: ../common/activation_luts.cpp, Line: 23, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: gru_top.cpp, Line: 65, Column: 18 }
+Function:        _ZN4mgr18gru_stepEPKiS1_PKaS3_S1_S1_iiiiPii
+Args:            
+  - Callee:          'mgr1::requantize(long long, int, int, int, int, int)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 67, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'mgr1::gru_step(int const*, int const*, signed char const*, signed char const*, int const*, int const*, int, int, int, int, int*, int)'
+    DebugLoc:        { File: gru_top.cpp, Line: 35, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: gru_top.cpp, Line: 70, Column: 16 }
+Function:        _ZN4mgr18gru_stepEPKiS1_PKaS3_S1_S1_iiiiPii
+Args:            
+  - Callee:          'mgr1::sigmoid_q15(int)'
+    DebugLoc:        { File: ../common/activation_luts.cpp, Line: 19, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'mgr1::gru_step(int const*, int const*, signed char const*, signed char const*, int const*, int const*, int, int, int, int, int*, int)'
+    DebugLoc:        { File: gru_top.cpp, Line: 35, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: gru_top.cpp, Line: 71, Column: 16 }
+Function:        _ZN4mgr18gru_stepEPKiS1_PKaS3_S1_S1_iiiiPii
+Args:            
+  - Callee:          'mgr1::tanh_q15(int)'
+    DebugLoc:        { File: ../common/activation_luts.cpp, Line: 23, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'mgr1::gru_step(int const*, int const*, signed char const*, signed char const*, int const*, int const*, int, int, int, int, int*, int)'
+    DebugLoc:        { File: gru_top.cpp, Line: 35, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: gru_top.cpp, Line: 79, Column: 24 }
+Function:        _ZN4mgr18gru_stepEPKiS1_PKaS3_S1_S1_iiiiPii
+Args:            
+  - Callee:          'mgr1::round_half_even(long long, long long)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 48, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'mgr1::gru_step(int const*, int const*, signed char const*, signed char const*, int const*, int const*, int, int, int, int, int*, int)'
+    DebugLoc:        { File: gru_top.cpp, Line: 35, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: gru_top.cpp, Line: 83, Column: 25 }
+Function:        _ZN4mgr18gru_stepEPKiS1_PKaS3_S1_S1_iiiiPii
+Args:            
+  - Callee:          'mgr1::sat(int, int, long long)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 57, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'mgr1::gru_step(int const*, int const*, signed char const*, signed char const*, int const*, int const*, int, int, int, int, int*, int)'
+    DebugLoc:        { File: gru_top.cpp, Line: 35, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+Function:        apatb_gru_step_ir
+Args:            
+  - Callee:          'mgr1::gru_step(int const*, int const*, signed char const*, signed char const*, int const*, int const*, int, int, int, int, int*, int)'
+    DebugLoc:        { File: gru_top.cpp, Line: 35, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          apatb_gru_step_ir
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: '../common\mgr1_types.h', Line: 67, Column: 0 }
+Function:        _ZN4mgr110requantizeExiiiii
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'mgr1::round_half_even(long long, long long)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 48, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'mgr1::requantize(long long, int, int, int, int, int)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 67, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: '../common\mgr1_types.h', Line: 67, Column: 0 }
+Function:        _ZN4mgr110requantizeExiiiii
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'mgr1::sat(int, int, long long)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 57, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'mgr1::requantize(long long, int, int, int, int, int)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 67, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: ../common/activation_luts.cpp, Line: 19, Column: 0 }
+Function:        _ZN4mgr111sigmoid_q15Ei
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'mgr1::sat(int, int, long long)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 57, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'mgr1::sigmoid_q15(int)'
+    DebugLoc:        { File: ../common/activation_luts.cpp, Line: 19, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: ../common/activation_luts.cpp, Line: 23, Column: 0 }
+Function:        _ZN4mgr18tanh_q15Ei
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'mgr1::sat(int, int, long long)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 57, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'mgr1::tanh_q15(int)'
+    DebugLoc:        { File: ../common/activation_luts.cpp, Line: 23, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: gru_top.cpp, Line: 35, Column: 0 }
+Function:        _ZN4mgr18gru_stepEPKiS1_PKaS3_S1_S1_iiiiPii
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'mgr1::requantize(long long, int, int, int, int, int)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 67, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'mgr1::gru_step(int const*, int const*, signed char const*, signed char const*, int const*, int const*, int, int, int, int, int*, int)'
+    DebugLoc:        { File: gru_top.cpp, Line: 35, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: gru_top.cpp, Line: 35, Column: 0 }
+Function:        _ZN4mgr18gru_stepEPKiS1_PKaS3_S1_S1_iiiiPii
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'mgr1::sigmoid_q15(int)'
+    DebugLoc:        { File: ../common/activation_luts.cpp, Line: 19, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'mgr1::gru_step(int const*, int const*, signed char const*, signed char const*, int const*, int const*, int, int, int, int, int*, int)'
+    DebugLoc:        { File: gru_top.cpp, Line: 35, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: gru_top.cpp, Line: 35, Column: 0 }
+Function:        _ZN4mgr18gru_stepEPKiS1_PKaS3_S1_S1_iiiiPii
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'mgr1::tanh_q15(int)'
+    DebugLoc:        { File: ../common/activation_luts.cpp, Line: 23, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'mgr1::gru_step(int const*, int const*, signed char const*, signed char const*, int const*, int const*, int, int, int, int, int*, int)'
+    DebugLoc:        { File: gru_top.cpp, Line: 35, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: gru_top.cpp, Line: 35, Column: 0 }
+Function:        _ZN4mgr18gru_stepEPKiS1_PKaS3_S1_S1_iiiiPii
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'mgr1::round_half_even(long long, long long)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 48, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'mgr1::gru_step(int const*, int const*, signed char const*, signed char const*, int const*, int const*, int, int, int, int, int*, int)'
+    DebugLoc:        { File: gru_top.cpp, Line: 35, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: gru_top.cpp, Line: 35, Column: 0 }
+Function:        _ZN4mgr18gru_stepEPKiS1_PKaS3_S1_S1_iiiiPii
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'mgr1::sat(int, int, long long)'
+    DebugLoc:        { File: '../common\mgr1_types.h', Line: 57, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'mgr1::gru_step(int const*, int const*, signed char const*, signed char const*, int const*, int const*, int, int, int, int, int*, int)'
+    DebugLoc:        { File: gru_top.cpp, Line: 35, Column: 0 }
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: gru_top.cpp, Line: 44, Column: 23 }
+Function:        _ZN4mgr18gru_stepEPKiS1_PKaS3_S1_S1_iiiiPii
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          b_ih
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: gru_top.cpp, Line: 47, Column: 30 }
+Function:        _ZN4mgr18gru_stepEPKiS1_PKaS3_S1_S1_iiiiPii
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          w_ih
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: gru_top.cpp, Line: 47, Column: 52 }
+Function:        _ZN4mgr18gru_stepEPKiS1_PKaS3_S1_S1_iiiiPii
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          x
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: gru_top.cpp, Line: 53, Column: 23 }
+Function:        _ZN4mgr18gru_stepEPKiS1_PKaS3_S1_S1_iiiiPii
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          b_hh
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: gru_top.cpp, Line: 56, Column: 30 }
+Function:        _ZN4mgr18gru_stepEPKiS1_PKaS3_S1_S1_iiiiPii
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          w_hh
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: gru_top.cpp, Line: 56, Column: 54 }
+Function:        _ZN4mgr18gru_stepEPKiS1_PKaS3_S1_S1_iiiiPii
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          h_prev
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: gru_top.cpp, Line: 78, Column: 45 }
+Function:        _ZN4mgr18gru_stepEPKiS1_PKaS3_S1_S1_iiiiPii
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          h_prev
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: gru_top.cpp, Line: 84, Column: 18 }
+Function:        _ZN4mgr18gru_stepEPKiS1_PKaS3_S1_S1_iiiiPii
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          h_out
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: gru_top.cpp, Line: 44, Column: 23 }
+Function:        _ZN4mgr18gru_stepEPKiS1_PKaS3_S1_S1_iiiiPii
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          b_ih
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: gru_top.cpp, Line: 47, Column: 30 }
+Function:        _ZN4mgr18gru_stepEPKiS1_PKaS3_S1_S1_iiiiPii
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          w_ih
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: gru_top.cpp, Line: 47, Column: 52 }
+Function:        _ZN4mgr18gru_stepEPKiS1_PKaS3_S1_S1_iiiiPii
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          x
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: gru_top.cpp, Line: 53, Column: 23 }
+Function:        _ZN4mgr18gru_stepEPKiS1_PKaS3_S1_S1_iiiiPii
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          b_hh
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: gru_top.cpp, Line: 56, Column: 30 }
+Function:        _ZN4mgr18gru_stepEPKiS1_PKaS3_S1_S1_iiiiPii
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          w_hh
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: gru_top.cpp, Line: 56, Column: 54 }
+Function:        _ZN4mgr18gru_stepEPKiS1_PKaS3_S1_S1_iiiiPii
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          h_prev
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: gru_top.cpp, Line: 78, Column: 45 }
+Function:        _ZN4mgr18gru_stepEPKiS1_PKaS3_S1_S1_iiiiPii
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          h_prev
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: gru_top.cpp, Line: 84, Column: 18 }
+Function:        _ZN4mgr18gru_stepEPKiS1_PKaS3_S1_S1_iiiiPii
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          h_out
+  - String:          ''''
+...

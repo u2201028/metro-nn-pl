@@ -1,0 +1,20 @@
+{
+  "0": {
+    "basicblocks": 51,
+    "calls": "",
+    "file": "gru_top.cpp",
+    "fileloc": 30,
+    "instructions": 275,
+    "loads": {
+      "G": 2,
+      "L": 6,
+      "T": 7
+    },
+    "name": "gru_step",
+    "stores": {
+      "L": 4,
+      "T": 1
+    },
+    "total_instructions": 275
+  }
+}

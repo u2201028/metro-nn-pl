@@ -31,26 +31,7 @@ file mkdir [file join $repo_root results vivado]
 # ---- project ---------------------------------------------------------------
 create_project -force mgr1_shell $out_dir -part $part
 
-# ---- sources ---------------------------------------------------------------
-# Exclusions: testbenches live in rtl/tb and are XSim territory; every other
-# .sv file (including the IP stub) is synthesizable.
-add_files -norecurse [file join $files_dir mgr1_defs.svh]
-add_files -norecurse [file join $files_dir shell csr_offsets.svh]
-add_files -norecurse [file join $files_dir shell csr_block.sv]
-add_files -norecurse [file join $files_dir shell mgr1_ip_stub.sv]
-add_files -norecurse [file join $files_dir shell mgr1_shell.sv]
-add_files -norecurse [file join $files_dir axi axis_skid_buffer.sv]
-add_files -norecurse [file join $files_dir axi axis_packet_ingress.sv]
-add_files -norecurse [file join $files_dir gru gru_sequencer.sv]
-add_files -fileset constrs_1 -norecurse [file join $repo_root vivado constraints]
-
-# The CSR schema is part of the IP definition (Section 11 provenance).
-add_files -norecurse [file join $repo_root ip schema csr_map.json]
-
-set_property top mgr1_shell [current_fileset]
-set_property include_dirs [list $files_dir] [current_fileset]
-
-# ---- constraints -----------------------------------------------------------
+# ---- constraints (must exist before add_files) -----------------------------
 # Minimal bring-up constraints: 150 MHz core clock; I/O and CDC refinement
 # belongs to the phase-9 bring-up XDC (runbook).
 file mkdir [file join $repo_root vivado constraints]
@@ -63,13 +44,38 @@ if { ![file exists $xdc] } {
     close $fh
 }
 
+# ---- sources ---------------------------------------------------------------
+# Exclusions: testbenches live in rtl/tb and are XSim territory; every other
+# .sv file (including the IP stub) is synthesizable.
+add_files -norecurse [file join $files_dir mgr1_defs.svh]
+add_files -norecurse [file join $files_dir shell csr_offsets.svh]
+add_files -norecurse [file join $files_dir shell csr_block.sv]
+add_files -norecurse [file join $files_dir shell mgr1_ip_stub.sv]
+add_files -norecurse [file join $files_dir shell mgr1_shell.sv]
+add_files -norecurse [file join $files_dir axi axis_skid_buffer.sv]
+add_files -norecurse [file join $files_dir axi axis_packet_ingress.sv]
+add_files -norecurse [file join $files_dir gru gru_sequencer.sv]
+add_files -fileset constrs_1 -norecurse $xdc
+
+# The CSR schema is part of the IP definition (Section 11 provenance).
+add_files -norecurse [file join $repo_root ip schema csr_map.json]
+
+set_property top mgr1_shell [current_fileset]
+set_property include_dirs [list $files_dir] [current_fileset]
+# The shell is an IP for the KV260 dynamic region at this phase: synthesis
+# runs out-of-context (no package I/O buffers - the pass-through PL/DMA pin
+# mapping belongs to the Phase-9 bring-up XDC).  Placement errors of the
+# form "could not place all instances" on an unconstrained bank plan are
+# exactly the failure this flag removes; routed timing remains the gate.
+set_property -name {STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS} -value {-mode out_of_context} -objects [get_runs synth_1]
+
 # ---- synthesis + implementation (routed timing, Phase 8) --------------------
 puts "INFO: MGR1 shell synth on $part"
-launch_runs impl_1 -to_step write_bitstream -jobs 4
+launch_runs impl_1 -to_step route_design -jobs 4
 wait_on_run impl_1
 
 set status [get_property STATUS [get_runs impl_1]]
-if { [string first "write_bitstream Complete" $status] == -1 } {
+if { [string first "route_design Complete" $status] == -1 } {
     puts "ERROR: impl_1 did not complete: $status"
     exit 1
 }

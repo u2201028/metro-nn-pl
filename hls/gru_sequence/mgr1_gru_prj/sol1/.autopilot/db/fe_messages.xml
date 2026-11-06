@@ -1,0 +1,62 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="" msg_id="207-5292" msg_severity="WARNING" msg_loc="gru_top.cpp:34:23" msg_body="unused parameter 'mult_gh'">
+        <args ClangWarningOption="unused-parameter"/>
+    </msg>
+    <msg msg_groups="" msg_id="207-5292" msg_severity="WARNING" msg_loc="gru_top.cpp:34:40" msg_body="unused parameter 'shift_gh'">
+        <args ClangWarningOption="unused-parameter"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="F:/metro-nn-pl/hls/gru_sequence/export_only.tcl:10:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="gru_step" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=gru_step" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="gru_top.cpp:46:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="gru_step" ARG_PragmaIsValid="1" ARG_PragmaOptions="II = 1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="gru_top.cpp:55:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="gru_step" ARG_PragmaIsValid="1" ARG_PragmaOptions="II = 1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="gru_top.cpp:62:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="gru_step" ARG_PragmaIsValid="1" ARG_PragmaOptions="II = 1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="gru_top.cpp:77:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="gru_step" ARG_PragmaIsValid="1" ARG_PragmaOptions="II = 1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="gru_top.cpp:92:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="gru_score" ARG_PragmaIsValid="1" ARG_PragmaOptions="II = 1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="../common\mgr1_types.h:67:0" msg_body="Inlining function 'mgr1::round_half_even(long long, long long)' into 'mgr1::requantize(long long, int, int, int, int, int)'">
+        <args Callee="mgr1::round_half_even(long long, long long)" Callee-DebugLoc="File {../common\mgr1_types.h} Line 48 Column 0" Caller="mgr1::requantize(long long, int, int, int, int, int)" Caller-DebugLoc="File {../common\mgr1_types.h} Line 67 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="../common\mgr1_types.h:67:0" msg_body="Inlining function 'mgr1::sat(int, int, long long)' into 'mgr1::requantize(long long, int, int, int, int, int)'">
+        <args Callee="mgr1::sat(int, int, long long)" Callee-DebugLoc="File {../common\mgr1_types.h} Line 57 Column 0" Caller="mgr1::requantize(long long, int, int, int, int, int)" Caller-DebugLoc="File {../common\mgr1_types.h} Line 67 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="../common/activation_luts.cpp:19:0" msg_body="Inlining function 'mgr1::sat(int, int, long long)' into 'mgr1::sigmoid_q15(int)'">
+        <args Callee="mgr1::sat(int, int, long long)" Callee-DebugLoc="File {../common\mgr1_types.h} Line 57 Column 0" Caller="mgr1::sigmoid_q15(int)" Caller-DebugLoc="File ../common/activation_luts.cpp Line 19 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="../common/activation_luts.cpp:23:0" msg_body="Inlining function 'mgr1::sat(int, int, long long)' into 'mgr1::tanh_q15(int)'">
+        <args Callee="mgr1::sat(int, int, long long)" Callee-DebugLoc="File {../common\mgr1_types.h} Line 57 Column 0" Caller="mgr1::tanh_q15(int)" Caller-DebugLoc="File ../common/activation_luts.cpp Line 23 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="gru_top.cpp:35:0" msg_body="Inlining function 'mgr1::requantize(long long, int, int, int, int, int)' into 'mgr1::gru_step(int const*, int const*, signed char const*, signed char const*, int const*, int const*, int, int, int, int, int*, int)'">
+        <args Callee="mgr1::requantize(long long, int, int, int, int, int)" Callee-DebugLoc="File {../common\mgr1_types.h} Line 67 Column 0" Caller="mgr1::gru_step(int const*, int const*, signed char const*, signed char const*, int const*, int const*, int, int, int, int, int*, int)" Caller-DebugLoc="File gru_top.cpp Line 35 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="gru_top.cpp:35:0" msg_body="Inlining function 'mgr1::sigmoid_q15(int)' into 'mgr1::gru_step(int const*, int const*, signed char const*, signed char const*, int const*, int const*, int, int, int, int, int*, int)'">
+        <args Callee="mgr1::sigmoid_q15(int)" Callee-DebugLoc="File ../common/activation_luts.cpp Line 19 Column 0" Caller="mgr1::gru_step(int const*, int const*, signed char const*, signed char const*, int const*, int const*, int, int, int, int, int*, int)" Caller-DebugLoc="File gru_top.cpp Line 35 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="gru_top.cpp:35:0" msg_body="Inlining function 'mgr1::tanh_q15(int)' into 'mgr1::gru_step(int const*, int const*, signed char const*, signed char const*, int const*, int const*, int, int, int, int, int*, int)'">
+        <args Callee="mgr1::tanh_q15(int)" Callee-DebugLoc="File ../common/activation_luts.cpp Line 23 Column 0" Caller="mgr1::gru_step(int const*, int const*, signed char const*, signed char const*, int const*, int const*, int, int, int, int, int*, int)" Caller-DebugLoc="File gru_top.cpp Line 35 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="gru_top.cpp:35:0" msg_body="Inlining function 'mgr1::round_half_even(long long, long long)' into 'mgr1::gru_step(int const*, int const*, signed char const*, signed char const*, int const*, int const*, int, int, int, int, int*, int)'">
+        <args Callee="mgr1::round_half_even(long long, long long)" Callee-DebugLoc="File {../common\mgr1_types.h} Line 48 Column 0" Caller="mgr1::gru_step(int const*, int const*, signed char const*, signed char const*, int const*, int const*, int, int, int, int, int*, int)" Caller-DebugLoc="File gru_top.cpp Line 35 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="gru_top.cpp:35:0" msg_body="Inlining function 'mgr1::sat(int, int, long long)' into 'mgr1::gru_step(int const*, int const*, signed char const*, signed char const*, int const*, int const*, int, int, int, int, int*, int)'">
+        <args Callee="mgr1::sat(int, int, long long)" Callee-DebugLoc="File {../common\mgr1_types.h} Line 57 Column 0" Caller="mgr1::gru_step(int const*, int const*, signed char const*, signed char const*, int const*, int const*, int, int, int, int, int*, int)" Caller-DebugLoc="File gru_top.cpp Line 35 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-450" msg_severity="WARNING" msg_loc="gru_top.cpp:44:23" msg_body="Ignore address on register port 'b_ih'"/>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-450" msg_severity="WARNING" msg_loc="gru_top.cpp:47:30" msg_body="Ignore address on register port 'w_ih'"/>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-450" msg_severity="WARNING" msg_loc="gru_top.cpp:47:52" msg_body="Ignore address on register port 'x'"/>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-450" msg_severity="WARNING" msg_loc="gru_top.cpp:53:23" msg_body="Ignore address on register port 'b_hh'"/>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-450" msg_severity="WARNING" msg_loc="gru_top.cpp:56:30" msg_body="Ignore address on register port 'w_hh'"/>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-450" msg_severity="WARNING" msg_loc="gru_top.cpp:56:54" msg_body="Ignore address on register port 'h_prev'"/>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-450" msg_severity="WARNING" msg_loc="gru_top.cpp:78:45" msg_body="Ignore address on register port 'h_prev'"/>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-450" msg_severity="WARNING" msg_loc="gru_top.cpp:84:18" msg_body="Ignore address on register port 'h_out'"/>
+</xilinx:hls_fe_msgs>
+

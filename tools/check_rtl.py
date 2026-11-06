@@ -42,7 +42,8 @@ def main() -> int:
     # slang's command-line parser treats backslash as an escape character, so
     # pass POSIX-style separators (identical on Linux, correct on Windows).
     cmd = (
-        f"-q -I{(ROOT / 'rtl').as_posix()} --single-unit "
+        f"-q -I{(ROOT / 'rtl').as_posix()} "
+        f"-I{(ROOT / 'rtl' / 'shell').as_posix()} --single-unit "
         + " ".join(f.as_posix() for f in files)
     )
     if not driver.parseCommandLine(cmd):

@@ -3,10 +3,10 @@
  "oracle": "model/integer_oracle/oracle.py",
  "files": {
   "conv_sentinels.vec": {
-   "sha256": "3ef54f6f23be93715555b628a4dfd81f7c1e856da082091d19275a0e9c97ca3f"
+   "sha256": "2cd830fa6b06006d4ea9e1704c1adf83f4eff2b6f8c8d7e08dcb029b5afb5010"
   },
   "gru_window.vec": {
-   "sha256": "d878767b76690a1acbf7a6f612d227629b42a65a2ab640938854043b7b44b305"
+   "sha256": "f5aa877f338a609b8b1f2914610ab320d47cabef35ef686098efd2e833fb898c"
   }
  },
  "formats": {

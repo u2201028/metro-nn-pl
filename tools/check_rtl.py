@@ -39,7 +39,12 @@ def main() -> int:
 
     driver = pyslang.driver.Driver()
     driver.addStandardArgs()
-    cmd = f"-q -I{ROOT / 'rtl'} --single-unit " + " ".join(str(f) for f in files)
+    # slang's command-line parser treats backslash as an escape character, so
+    # pass POSIX-style separators (identical on Linux, correct on Windows).
+    cmd = (
+        f"-q -I{(ROOT / 'rtl').as_posix()} --single-unit "
+        + " ".join(f.as_posix() for f in files)
+    )
     if not driver.parseCommandLine(cmd):
         print("command line parse failed")
         return 1

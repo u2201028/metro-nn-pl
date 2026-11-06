@@ -1,0 +1,31 @@
+# Vitis HLS 2025.2 build for the GRU sequence kernel (hardware-gated).
+# Run on a host with Vitis HLS:  vitis_hls -f build.tcl
+# Stages: csim (must match vectors/golden/gru_window.vec), cosim, export.
+#
+# The C simulation must reproduce the Python oracle bit-exactly; the
+# sandbox run of tb_gru.cpp is the reference evidence (see
+# results/run_ledger.csv).  Synthesis, co-simulation and export require
+# the Vitis toolchain and are recorded as PENDING until run on hardware.
+
+set prj      mgr1_gru_prj
+set top      gru_step
+set part     xck26-sfvc784-2LV-c
+set clkperiod 6.67
+
+open_project -reset $prj
+set_top $top
+add_files ../common/activation_luts.cpp
+add_files ./gru_top.cpp -cflags "-I../common"
+add_files -tb ./tb_gru.cpp -cflags "-I../common"
+add_files -tb ../../vectors/golden/gru_window.vec
+
+open_solution "sol1" -flow target vivado
+set_part $part
+create_clock -period $clkperiod -name default
+
+csim_design -argv "../../vectors/golden/gru_window.vec"
+csynth_design
+cosim_design -argv "../../vectors/golden/gru_window.vec"
+export_design -format ip_catalog
+
+exit
